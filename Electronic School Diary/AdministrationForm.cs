@@ -14,7 +14,10 @@ namespace ElectronicSchoolDiary
     public partial class AdministrationForm : Form
     {
       
-
+        public void warning()
+        {
+            MessageBox.Show("Polja ne mogu biti prazna !");
+        }
         public AdministrationForm()
         {
             InitializeComponent();
@@ -57,7 +60,7 @@ namespace ElectronicSchoolDiary
                 PasswordPanel.Hide();
                 DepartmentPanel.Hide();
             }
-            if (current == "Ucenika")
+            if (current == "Ucenika i roditelja")
             {
                 StudentPanel.Show();
                 label2.Show();
@@ -101,19 +104,6 @@ namespace ElectronicSchoolDiary
 
         }
 
-        private void LoggedUserLabel_Click(object sender, EventArgs e)
-        {
-
-            StudentPanel.Show();
-            label2.Show();
-            UserBox.Show();
-            TeachersPanel.Hide();
-            AdministratorPanel.Hide();
-            DepartmentPanel.Hide();
-            PasswordPanel.Hide();
-           
-        }
-
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
             Form form = new LoginForm();
@@ -125,16 +115,18 @@ namespace ElectronicSchoolDiary
         {
             if( AdminUserNameTextBox.Text.Length == 0 || AdminPasswordTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Polja ne mogu biti prazna !");
+                warning();
             }
         }
-        private void AdAdminButton_Click(object sender, EventArgs e)
+
+         private void ChangePassAdminButton_Click(object sender, EventArgs e)
         {
+            
             if (OldPassTextBox.Text.Length == 0 ||
                 NewPassTextBox.Text.Length == 0 ||
                 ConfirmedNewPassTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Polja ne mogu biti prazna !");
+                warning();
             }
         }
 
@@ -143,27 +135,62 @@ namespace ElectronicSchoolDiary
             if (ParentNameTextBox.Text.Length == 0 ||
              ParentSurnameTextBox.Text.Length == 0 )
             {
-                MessageBox.Show("Polja ne mogu biti prazna !");
+                warning();
             }
         }
 
-        private void AddStudentButton_Click_1(object sender, EventArgs e)
+        private void AddStudentButton_Click(object sender, EventArgs e)
         {
             if (StudentNameTextBox.Text.Length == 0 ||
             StudentSurnameTextBox.Text.Length == 0 ||
             StudentJmbgTextBox.Text.Length == 0 )
             {
-                MessageBox.Show("Polja ne mogu biti prazna !");
+                warning();
             }
         }
 
-        private void AddTeacherButton_Click_1(object sender, EventArgs e)
+        private void AddTeacherButton_Click(object sender, EventArgs e)
         {
-            if (TeacherNameTextBox.Text.Length == 0 ||
+
+           if (TeacherNameTextBox.Text.Length == 0 ||
               TeacherSurnameTextBox.Text.Length == 0 ||
               TeacherPasswordTextBox.Text.Length == 0)
             {
-                MessageBox.Show("Polja ne mogu biti prazna !");
+                warning();
+            }
+        }
+
+        private void ControlTableButton_Click(object sender, EventArgs e)
+        {
+            StudentPanel.Show();
+            label2.Show();
+            UserBox.Show();
+            TeachersPanel.Hide();
+            AdministratorPanel.Hide();
+            DepartmentPanel.Hide();
+            PasswordPanel.Hide();
+        }
+
+        private void AddCourseButton_Click(object sender, EventArgs e)
+        {
+            if(CourseTextBox.Text.Length == 0)
+            {
+                warning();
+            }
+        }
+
+        private void AddDepartmentAndClassTeacherButton_Click(object sender, EventArgs e)
+        {
+            if(StudentNameTextBox.Text.Length == 0 ||
+               StudentSurnameTextBox.Text.Length == 0 ||
+               StudentNameTextBox.Text.Length == 0 ||
+               StudentJmbgTextBox.Text.Length == 0 ||
+               ParentNameTextBox.Text.Length == 0 ||
+               ParentSurnameTextBox.Text.Length == 0 ||
+               StudentNameTextBox.Text.Length == 0
+                )
+            {
+                warning();
             }
         }
     }

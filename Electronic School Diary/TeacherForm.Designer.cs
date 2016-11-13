@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TeacherNameLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,12 +75,12 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.PasswordPanel = new System.Windows.Forms.Panel();
-            this.CancelMeetingRoundedButton = new RoundedButton();
-            this.ConfirmMeetingRoundedButton = new RoundedButton();
+            this.CancelMeetingRoundedButton = new ElectronicSchoolDiary.RoundedButton();
+            this.ConfirmMeetingRoundedButton = new ElectronicSchoolDiary.RoundedButton();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.ParentsMeetingMonthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.AddTeacherPasswordButton = new RoundedButton();
+            this.AddTeacherPasswordButton = new ElectronicSchoolDiary.RoundedButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -100,33 +98,15 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.LogOutUserButton = new RoundedButton();
-            this.UserSettingsButton = new RoundedButton();
-            this.AddAbsentButton = new RoundedButton();
-            this.AddMarkButton = new RoundedButton();
-            this.PrintStatisticTeacherRoundedButton = new RoundedButton();
+            this.LogOutUserButton = new ElectronicSchoolDiary.RoundedButton();
+            this.UserSettingsButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddAbsentButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddMarkButton = new ElectronicSchoolDiary.RoundedButton();
+            this.PrintStatisticTeacherRoundedButton = new ElectronicSchoolDiary.RoundedButton();
+            this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
+            this.label44 = new System.Windows.Forms.Label();
             this.PasswordPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TeacherNameLabel
-            // 
-            this.TeacherNameLabel.AutoSize = true;
-            this.TeacherNameLabel.Location = new System.Drawing.Point(257, 30);
-            this.TeacherNameLabel.Name = "TeacherNameLabel";
-            this.TeacherNameLabel.Size = new System.Drawing.Size(35, 13);
-            this.TeacherNameLabel.TabIndex = 0;
-            this.TeacherNameLabel.Text = "label1";
-            this.TeacherNameLabel.Click += new System.EventHandler(this.TeacherNameLabel_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Dobro došli na sistem :";
             // 
             // label1
             // 
@@ -587,7 +567,7 @@
             // 
             this.CancelMeetingRoundedButton.BackColor = System.Drawing.Color.Crimson;
             this.CancelMeetingRoundedButton.ForeColor = System.Drawing.Color.White;
-            this.CancelMeetingRoundedButton.Location = new System.Drawing.Point(251, 297);
+            this.CancelMeetingRoundedButton.Location = new System.Drawing.Point(52, 290);
             this.CancelMeetingRoundedButton.Name = "CancelMeetingRoundedButton";
             this.CancelMeetingRoundedButton.Size = new System.Drawing.Size(150, 23);
             this.CancelMeetingRoundedButton.TabIndex = 73;
@@ -598,7 +578,7 @@
             // ConfirmMeetingRoundedButton
             // 
             this.ConfirmMeetingRoundedButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.ConfirmMeetingRoundedButton.Location = new System.Drawing.Point(36, 297);
+            this.ConfirmMeetingRoundedButton.Location = new System.Drawing.Point(257, 290);
             this.ConfirmMeetingRoundedButton.Name = "ConfirmMeetingRoundedButton";
             this.ConfirmMeetingRoundedButton.Size = new System.Drawing.Size(150, 23);
             this.ConfirmMeetingRoundedButton.TabIndex = 72;
@@ -641,6 +621,7 @@
             this.AddTeacherPasswordButton.TabIndex = 34;
             this.AddTeacherPasswordButton.Text = "Potvrdite promjenu";
             this.AddTeacherPasswordButton.UseVisualStyleBackColor = true;
+            this.AddTeacherPasswordButton.Click += new System.EventHandler(this.AddTeacherPasswordButton_Click);
             // 
             // label14
             // 
@@ -800,7 +781,7 @@
             // 
             // LogOutUserButton
             // 
-            this.LogOutUserButton.Location = new System.Drawing.Point(805, 22);
+            this.LogOutUserButton.Location = new System.Drawing.Point(805, 19);
             this.LogOutUserButton.Name = "LogOutUserButton";
             this.LogOutUserButton.Size = new System.Drawing.Size(83, 24);
             this.LogOutUserButton.TabIndex = 31;
@@ -810,7 +791,7 @@
             // 
             // UserSettingsButton
             // 
-            this.UserSettingsButton.Location = new System.Drawing.Point(706, 23);
+            this.UserSettingsButton.Location = new System.Drawing.Point(706, 19);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(83, 24);
             this.UserSettingsButton.TabIndex = 30;
@@ -835,16 +816,37 @@
             this.AddMarkButton.TabIndex = 27;
             this.AddMarkButton.Text = "Dodajte ocjenu";
             this.AddMarkButton.UseVisualStyleBackColor = true;
+            this.AddMarkButton.Click += new System.EventHandler(this.AddMarkButton_Click);
             // 
             // PrintStatisticTeacherRoundedButton
             // 
-            this.PrintStatisticTeacherRoundedButton.Location = new System.Drawing.Point(536, 23);
+            this.PrintStatisticTeacherRoundedButton.Location = new System.Drawing.Point(570, 21);
             this.PrintStatisticTeacherRoundedButton.Name = "PrintStatisticTeacherRoundedButton";
-            this.PrintStatisticTeacherRoundedButton.Size = new System.Drawing.Size(132, 24);
+            this.PrintStatisticTeacherRoundedButton.Size = new System.Drawing.Size(98, 24);
             this.PrintStatisticTeacherRoundedButton.TabIndex = 69;
             this.PrintStatisticTeacherRoundedButton.Text = "Statistika";
             this.PrintStatisticTeacherRoundedButton.UseVisualStyleBackColor = true;
             this.PrintStatisticTeacherRoundedButton.Click += new System.EventHandler(this.PrintStatisticTeacherRoundedButton_Click);
+            // 
+            // ControlTableButton
+            // 
+            this.ControlTableButton.Location = new System.Drawing.Point(235, 19);
+            this.ControlTableButton.Name = "ControlTableButton";
+            this.ControlTableButton.Size = new System.Drawing.Size(132, 24);
+            this.ControlTableButton.TabIndex = 70;
+            this.ControlTableButton.Text = "Kontrolna Tabla";
+            this.ControlTableButton.UseVisualStyleBackColor = true;
+            this.ControlTableButton.Click += new System.EventHandler(this.ControlTableButton_Click);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(19, 19);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(192, 24);
+            this.label44.TabIndex = 71;
+            this.label44.Text = "Dobro Došli na sistem";
             // 
             // TeacherForm
             // 
@@ -852,6 +854,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(915, 490);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.ControlTableButton);
             this.Controls.Add(this.PrintStatisticTeacherRoundedButton);
             this.Controls.Add(this.PasswordPanel);
             this.Controls.Add(this.label41);
@@ -914,8 +918,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TeacherNameLabel);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(931, 529);
             this.MinimumSize = new System.Drawing.Size(931, 529);
@@ -930,8 +932,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label TeacherNameLabel;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1007,5 +1007,7 @@
         private System.Windows.Forms.Label label41;
         private RoundedButton PrintStatisticTeacherRoundedButton;
         private RoundedButton CancelMeetingRoundedButton;
+        private RoundedButton ControlTableButton;
+        private System.Windows.Forms.Label label44;
     }
 }

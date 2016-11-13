@@ -17,13 +17,16 @@ namespace ElectronicSchoolDiary
             InitializeComponent();
         }
 
+        public void warning()
+        {
+            MessageBox.Show("Polja ne mogu biti prazna !");
+        }
+
         private void DirectorForm_Load(object sender, EventArgs e)
         {
             CenterToParent();
             ControlBox = false;
             ChoseComboBox.SelectedIndex = 0;
-            TeacherAccessLevelComboBox.SelectedIndex = 3;
-            AdminAccessLevelComboBox.SelectedIndex = 0;
         }
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
@@ -31,19 +34,6 @@ namespace ElectronicSchoolDiary
             Form form = new LoginForm();
             form.Show();
             this.Hide();
-        }
-
-
-        private void LoggedUserLabel_Click(object sender, EventArgs e)
-        {
-            ChoseComboBox.SelectedIndex = 0;
-            AdminPanel.Show();
-            label2.Show();
-            ChoseComboBox.Show();
-            TeacherPanel.Hide();
-            StudentAndParentPanel.Hide();
-            DepartmentsPanel.Hide();
-            PasswordPanel.Hide();
         }
         private string selectedUser()
         {
@@ -135,6 +125,46 @@ namespace ElectronicSchoolDiary
         private void roundedButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ControlTableButton_Click(object sender, EventArgs e)
+        {
+            ChoseComboBox.SelectedIndex = 0;
+            AdminPanel.Show();
+            label2.Show();
+            ChoseComboBox.Show();
+            TeacherPanel.Hide();
+            StudentAndParentPanel.Hide();
+            DepartmentsPanel.Hide();
+            PasswordPanel.Hide();
+        }
+
+        private void ChangeTeacherInfoButton_Click(object sender, EventArgs e)
+        {
+            if(
+                TeacherNameTextBox.Text.Length == 0 ||
+                TeacherSurnameTextBox.Text.Length == 0 )
+            {
+                warning();
+            }
+        }
+
+        private void ChangeAdminInfoRoundedButton_Click(object sender, EventArgs e)
+        {
+            if(AdminNameTextBox.Text.Length == 0 || AdminSurnameTextBox.Text.Length ==0)
+            {
+                warning();
+            }
+        }
+
+        private void AddDirectorPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (OldPassTextBox.Text.Length == 0 ||
+               NewPassTextBox.Text.Length == 0 ||
+               ConfirmedNewPassTextBox.Text.Length == 0)
+            {
+                warning();
+            }
         }
     }
 }
