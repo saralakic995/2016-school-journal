@@ -44,8 +44,8 @@
             this.AdministratorPanel = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.AdminPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.AdminUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.AdminSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.AdminNameTextBox = new System.Windows.Forms.TextBox();
             this.StudentPanel = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -95,6 +95,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.SectionsTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddAdminButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddStudentButton = new ElectronicSchoolDiary.RoundedButton();
@@ -226,11 +228,13 @@
             // 
             // AdministratorPanel
             // 
+            this.AdministratorPanel.Controls.Add(this.label16);
+            this.AdministratorPanel.Controls.Add(this.UserNameTextBox);
             this.AdministratorPanel.Controls.Add(this.AddAdminButton);
             this.AdministratorPanel.Controls.Add(this.label14);
             this.AdministratorPanel.Controls.Add(this.label15);
-            this.AdministratorPanel.Controls.Add(this.AdminPasswordTextBox);
-            this.AdministratorPanel.Controls.Add(this.AdminUserNameTextBox);
+            this.AdministratorPanel.Controls.Add(this.AdminSurnameTextBox);
+            this.AdministratorPanel.Controls.Add(this.AdminNameTextBox);
             this.AdministratorPanel.Location = new System.Drawing.Point(6, 103);
             this.AdministratorPanel.Name = "AdministratorPanel";
             this.AdministratorPanel.Size = new System.Drawing.Size(738, 326);
@@ -241,9 +245,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(16, 33);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.Size = new System.Drawing.Size(24, 13);
             this.label14.TabIndex = 14;
-            this.label14.Text = "Korisničko Ime";
+            this.label14.Text = "Ime";
             // 
             // label15
             // 
@@ -252,21 +256,21 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(44, 13);
             this.label15.TabIndex = 16;
-            this.label15.Text = "Lozinka";
+            this.label15.Text = "Prezime";
             // 
-            // AdminPasswordTextBox
+            // AdminSurnameTextBox
             // 
-            this.AdminPasswordTextBox.Location = new System.Drawing.Point(213, 74);
-            this.AdminPasswordTextBox.Name = "AdminPasswordTextBox";
-            this.AdminPasswordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.AdminPasswordTextBox.TabIndex = 3;
+            this.AdminSurnameTextBox.Location = new System.Drawing.Point(213, 74);
+            this.AdminSurnameTextBox.Name = "AdminSurnameTextBox";
+            this.AdminSurnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AdminSurnameTextBox.TabIndex = 3;
             // 
-            // AdminUserNameTextBox
+            // AdminNameTextBox
             // 
-            this.AdminUserNameTextBox.Location = new System.Drawing.Point(213, 33);
-            this.AdminUserNameTextBox.Name = "AdminUserNameTextBox";
-            this.AdminUserNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.AdminUserNameTextBox.TabIndex = 2;
+            this.AdminNameTextBox.Location = new System.Drawing.Point(213, 33);
+            this.AdminNameTextBox.Name = "AdminNameTextBox";
+            this.AdminNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AdminNameTextBox.TabIndex = 2;
             // 
             // StudentPanel
             // 
@@ -752,6 +756,22 @@
             this.SectionsTextBox.Size = new System.Drawing.Size(100, 20);
             this.SectionsTextBox.TabIndex = 18;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 118);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(76, 13);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Korisničko Ime";
+            // 
+            // UserNameTextBox
+            // 
+            this.UserNameTextBox.Location = new System.Drawing.Point(213, 111);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.UserNameTextBox.TabIndex = 4;
+            // 
             // ControlTableButton
             // 
             this.ControlTableButton.Location = new System.Drawing.Point(238, 9);
@@ -764,7 +784,7 @@
             // 
             // AddAdminButton
             // 
-            this.AddAdminButton.Location = new System.Drawing.Point(213, 125);
+            this.AddAdminButton.Location = new System.Drawing.Point(213, 163);
             this.AddAdminButton.Name = "AddAdminButton";
             this.AddAdminButton.Size = new System.Drawing.Size(100, 23);
             this.AddAdminButton.TabIndex = 35;
@@ -864,7 +884,7 @@
             this.MinimumSize = new System.Drawing.Size(789, 537);
             this.Name = "AdministrationForm";
             this.ShowIcon = false;
-            this.Text = "a";
+            this.Text = "Administration form";
             this.Load += new System.EventHandler(this.AdministrationForm_Load);
             this.PasswordPanel.ResumeLayout(false);
             this.PasswordPanel.PerformLayout();
@@ -897,8 +917,8 @@
         private System.Windows.Forms.Panel AdministratorPanel;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox AdminPasswordTextBox;
-        private System.Windows.Forms.TextBox AdminUserNameTextBox;
+        private System.Windows.Forms.TextBox AdminSurnameTextBox;
+        private System.Windows.Forms.TextBox AdminNameTextBox;
         private System.Windows.Forms.Panel StudentPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -957,5 +977,7 @@
         private RoundedButton AddCourseButton;
         private RoundedButton AddDepartmentAndClassTeacherButton;
         private RoundedButton ControlTableButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox UserNameTextBox;
     }
 }

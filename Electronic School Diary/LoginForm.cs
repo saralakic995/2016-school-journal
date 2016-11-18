@@ -11,7 +11,8 @@ using System.Text;
 using System.Threading;
 using System.IO;
 using System.Windows.Forms;
-
+using ElectronicSchoolDiary.Models;
+using ElectronicSchoolDiary.Repos;
 
 namespace ElectronicSchoolDiary
 {
@@ -24,7 +25,7 @@ namespace ElectronicSchoolDiary
         {
             return home;
         }
-
+     
         private void CapsWarning(TextBox box)
         {
             if (Control.IsKeyLocked(Keys.CapsLock))
@@ -54,16 +55,12 @@ namespace ElectronicSchoolDiary
             UserNameTextBox.MouseHover += new EventHandler(PasswordTextBox_MouseHover);
             PasswordTextBox.MouseLeave += new EventHandler(PasswordTextBox_MouseLeave);
 
-         
             CenterToParent();
-
-
-
             /*  Email email = new Email();
             email.SendEmailInBackground("miroslavmaksimovic95@gmail.com", "Miroslav", "password", "miki.maksimovic19995@gmail.com", "asd imamo izvjestaj");
 */
         }
-
+    
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (UserNameTextBox.Text.Length == 0 || PasswordTextBox.Text.Length == 0)
@@ -76,13 +73,16 @@ namespace ElectronicSchoolDiary
                 PasswordWarning.Show();
             }
             else { PasswordWarning.Hide(); }
+            Credentials r = new Credentials();
+            r.CheckLogin(UserNameTextBox, PasswordTextBox);
+            if (r.isNewFormOpened() == true)
+            {
+                UserNameTextBox.Text = "";
+                PasswordTextBox.Text = "";
+                this.Hide();
+            }
 
-            Credentials cr = new Credentials();
-            cr.CheckLogin(UserNameTextBox, PasswordTextBox);
-            if(cr.isNewFormOpened() == true)
-            this.Hide();
         }
-
         private void UserNameTextBox_TextChanged(object sender, EventArgs e)
         {
             if (UserNameTextBox.Text.Length == 0) { NameWarning.Show(); } else { NameWarning.Hide(); }

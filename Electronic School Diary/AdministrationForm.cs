@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ElectronicSchoolDiary.Models;
+using ElectronicSchoolDiary.Repos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +15,21 @@ namespace ElectronicSchoolDiary
 {
     public partial class AdministrationForm : Form
     {
-      
+        private User CurrentUser;
+        private Admin CurrentAdmin;
+        public bool isPasswordChanged = false;
+
         public void warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
         }
-        public AdministrationForm()
+        public AdministrationForm(User user, Admin admin)
         {
             InitializeComponent();
+            this.Text = "Administrator : " + admin.Name + " "  + admin.Surname;
+            CurrentUser = user;
+            CurrentAdmin = admin;
         }
-
         private void AdministrationForm_Load(object sender, EventArgs e)
         {
             CenterToParent();
@@ -106,27 +113,59 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            Form form = new LoginForm();
-            form.Show();
-            this.Hide();
+            if (isPasswordChanged == false)
+            {
+                Form form = new LoginForm();
+                form.Show();
+                this.Close();
+            }
+            else
+            {
+                Environment.Exit(0);
+                Close();
+            }
         }
 
         private void AddAdminButton_Click(object sender, EventArgs e)
         {
-            if( AdminUserNameTextBox.Text.Length == 0 || AdminPasswordTextBox.Text.Length == 0)
+            if (AdminNameTextBox.Text.Length == 0 || AdminSurnameTextBox.Text.Length == 0 || UserNameTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+               
+                AdminRepository.AddAdmin(AdminNameTextBox.Text, AdminSurnameTextBox.Text, UserNameTextBox.Text, AdminNameTextBox.Text + AdminSurnameTextBox.Text);
             }
         }
 
          private void ChangePassAdminButton_Click(object sender, EventArgs e)
         {
-            
+
             if (OldPassTextBox.Text.Length == 0 ||
                 NewPassTextBox.Text.Length == 0 ||
                 ConfirmedNewPassTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+                if (OldPassTextBox.Text == NewPassTextBox.Text)
+                {
+                    MessageBox.Show("Unesite novu lozinku koja se razlikuje od stare !");
+                }
+                else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
+                {
+                    UsersRepository.ChangeAdminPassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                    isPasswordChanged = true;
+                    OldPassTextBox.Text = "";
+                    NewPassTextBox.Text = "";
+                    ConfirmedNewPassTextBox.Text = "";
+                }
+                else if(NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
+                MessageBox.Show("Nove lozinke se ne poklapaju !");
+                else MessageBox.Show("Pogrešna lozinka !");
+
             }
         }
 

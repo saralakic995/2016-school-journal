@@ -82,6 +82,7 @@
       <DependentUpon>AdministrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Credentials.cs" />
+    <Compile Include="DataBaseConnection.cs" />
     <Compile Include="DirectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,8 +96,24 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Absent.cs" />
+    <Compile Include="Models\Section.cs" />
+    <Compile Include="Models\Parent.cs" />
+    <Compile Include="Models\Mark.cs" />
+    <Compile Include="Models\Director.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Administration.cs" />
+    <Compile Include="Models\Teachers_Departments_Courses.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\TeacherRepository.cs" />
+    <Compile Include="Repos\UsersRepository.cs" />
+    <Compile Include="Repos\AdminRepository.cs" />
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -130,6 +147,7 @@
     <EmbeddedResource Include="TeacherForm.resx">
       <DependentUpon>TeacherForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Ediary.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

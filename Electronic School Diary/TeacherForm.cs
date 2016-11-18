@@ -8,20 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using ElectronicSchoolDiary.Models;
+using ElectronicSchoolDiary.Repos;
 
 namespace ElectronicSchoolDiary
 {  
     public partial class TeacherForm : Form
     {
-        public TeacherForm()
-        {
-            InitializeComponent();
-        }
+        private User CurrentUser;
+        private Teacher CurrentTeacher;
+        public bool isPasswordChanged = false;
 
         public void warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
         }
+
+        public TeacherForm(User user, Teacher teacher)
+        {
+            InitializeComponent();
+            this.Text = "Nastavnik : " + teacher.Name + " " + teacher.Surname;
+            CurrentUser = user;
+            CurrentTeacher = teacher;
+        }
+
+      
         private void TeacherForm_Load(object sender, EventArgs e)
         {
             PasswordPanel.Hide();
@@ -32,9 +43,17 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            Form form = new LoginForm();
-            form.Show();
-            this.Hide();
+            if (isPasswordChanged == false)
+            {
+                Form form = new LoginForm();
+                form.Show();
+                this.Close();
+            }
+            else
+            {
+                Environment.Exit(0);
+                Close();
+            }
         }
 
         private void UserSettingsButton_Click(object sender, EventArgs e)
@@ -70,10 +89,29 @@ namespace ElectronicSchoolDiary
         private void AddTeacherPasswordButton_Click(object sender, EventArgs e)
         {
             if (OldPassTextBox.Text.Length == 0 ||
-             NewPassTextBox.Text.Length == 0 ||
-             ConfirmedNewPassTextBox.Text.Length == 0)
+                 NewPassTextBox.Text.Length == 0 ||
+                 ConfirmedNewPassTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+                if (OldPassTextBox.Text == NewPassTextBox.Text)
+                {
+                    MessageBox.Show("Unesite novu lozinku koja se razlikuje od stare !");
+                }
+                else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
+                {
+                    UsersRepository.ChangeAdminPassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                    isPasswordChanged = true;
+                    OldPassTextBox.Text = "";
+                    NewPassTextBox.Text = "";
+                    ConfirmedNewPassTextBox.Text = "";
+                }
+                else if (NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
+                    MessageBox.Show("Nove lozinke se ne poklapaju !");
+                else MessageBox.Show("Pogrešna lozinka !");
+
             }
         }
 
