@@ -11,29 +11,64 @@ namespace ElectronicSchoolDiary.Repos
 {
     class UsersRepository
     {
-        public static void ChangeAdminPassword(int id, string oldPassword, string newPassword, string confirmedNewPassword)
+        private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+        public static bool ChangePassword(int id, string oldPassword, string newPassword, string confirmedNewPassword)
         {
+            bool flag = false;
             try
             {
-                using (SqlCeConnection Connection = DataBaseConnection.Instance.Connection)
-
-                {
-                    SqlCeCommand command = new SqlCeCommand(@"UPDATE Users SET Password = @pass WHERE Id=@LoggedId;", Connection);
+                SqlCeCommand command = new SqlCeCommand(@"UPDATE Users SET Password = @pass WHERE Id=@LoggedId;", Connection);
                     command.Parameters.AddWithValue("@LoggedId", id);
                     command.Parameters.AddWithValue("@pass", newPassword);
                     int result = command.ExecuteNonQuery();
                     if (result > 0)
-                    { 
+                    {
+                    flag = true;
                     MessageBox.Show("Lozinka je uspješno promijenjena !");
-                      
                     }
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return flag;
            
+        }
+        public static int GetIdByName(string name,string password)
+        {
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Users WHERE UserName = @name AND Password = @pass", Connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@pass", password);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
+        public static void InsertUser(string UserName, string Password)
+        {
+            try
+            {
+
+                SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Users (UserName, Password)
+                    VALUES (@username, @password)", Connection);
+                    command.Parameters.AddWithValue("@username", UserName);
+                    command.Parameters.AddWithValue("@password", Password);
+                    int result = command.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Podaci za logovanje su uspješno dodati !");
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

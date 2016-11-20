@@ -111,6 +111,8 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\ParentRepository.cs" />
+    <Compile Include="Repos\StudentRepository.cs" />
     <Compile Include="Repos\TeacherRepository.cs" />
     <Compile Include="Repos\UsersRepository.cs" />
     <Compile Include="Repos\AdminRepository.cs" />

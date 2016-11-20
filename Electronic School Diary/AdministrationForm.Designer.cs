@@ -37,21 +37,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.ConfirmedNewPassTextBox = new System.Windows.Forms.TextBox();
-            this.NewPassTextBox = new System.Windows.Forms.TextBox();
-            this.OldPassTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.AdministratorPanel = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.AdminSurnameTextBox = new System.Windows.Forms.TextBox();
-            this.AdminNameTextBox = new System.Windows.Forms.TextBox();
+            this.DepartmentPanel = new System.Windows.Forms.Panel();
+            this.DepartmentNumberTextBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.StudentPanel = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ParentPhoneTextBox = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.ParentAddressTextBox = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -71,20 +65,6 @@
             this.StudentSurnameTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.StudentNameTextBox = new System.Windows.Forms.TextBox();
-            this.TeachersPanel = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.TeacherPasswordTextBox = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.TeacherPhoneTextBox = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.TeacherAddressTextBox = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.TeacherSurnameTextBox = new System.Windows.Forms.TextBox();
-            this.TeacherNameTextBox = new System.Windows.Forms.TextBox();
-            this.DepartmentPanel = new System.Windows.Forms.Panel();
-            this.DepartmentNumberTextBox = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.CourseTextBox = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.CoursesCheckedListBox = new System.Windows.Forms.CheckedListBox();
@@ -95,22 +75,55 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.SectionsTextBox = new System.Windows.Forms.TextBox();
+            this.ConfirmedNewPassTextBox = new System.Windows.Forms.TextBox();
+            this.NewPassTextBox = new System.Windows.Forms.TextBox();
+            this.OldPassTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.AdministratorPanel = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
-            this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
-            this.AddAdminButton = new ElectronicSchoolDiary.RoundedButton();
-            this.AddStudentButton = new ElectronicSchoolDiary.RoundedButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.AdminSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.AdminNameTextBox = new System.Windows.Forms.TextBox();
+            this.TeachersPanel = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.TeacherUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TeacherPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.TeacherAddressTextBox = new System.Windows.Forms.TextBox();
+            this.TeacherSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.TeacherNameTextBox = new System.Windows.Forms.TextBox();
+            this.warLabel = new System.Windows.Forms.Label();
+            this.WarLabel1 = new System.Windows.Forms.Label();
+            this.AddTeacherButton = new ElectronicSchoolDiary.RoundedButton();
+            this.ChangePassAdminButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddDepartmentAndClassTeacherButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddCourseButton = new ElectronicSchoolDiary.RoundedButton();
-            this.ChangePassAdminButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddStudentButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddAdminButton = new ElectronicSchoolDiary.RoundedButton();
+            this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
             this.UserSettingsButton = new ElectronicSchoolDiary.RoundedButton();
             this.LogOutUserButton = new ElectronicSchoolDiary.RoundedButton();
-            this.AddTeacherButton = new ElectronicSchoolDiary.RoundedButton();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.PasswordPanel.SuspendLayout();
-            this.AdministratorPanel.SuspendLayout();
-            this.StudentPanel.SuspendLayout();
-            this.TeachersPanel.SuspendLayout();
             this.DepartmentPanel.SuspendLayout();
+            this.StudentPanel.SuspendLayout();
+            this.AdministratorPanel.SuspendLayout();
+            this.TeachersPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -163,7 +176,7 @@
             this.PasswordPanel.Controls.Add(this.NewPassTextBox);
             this.PasswordPanel.Controls.Add(this.OldPassTextBox);
             this.PasswordPanel.Controls.Add(this.label10);
-            this.PasswordPanel.Location = new System.Drawing.Point(12, 99);
+            this.PasswordPanel.Location = new System.Drawing.Point(12, 93);
             this.PasswordPanel.Name = "PasswordPanel";
             this.PasswordPanel.Size = new System.Drawing.Size(738, 326);
             this.PasswordPanel.TabIndex = 32;
@@ -195,90 +208,56 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "Potvrdite novu lozinku";
             // 
-            // ConfirmedNewPassTextBox
+            // DepartmentPanel
             // 
-            this.ConfirmedNewPassTextBox.Location = new System.Drawing.Point(443, 214);
-            this.ConfirmedNewPassTextBox.Name = "ConfirmedNewPassTextBox";
-            this.ConfirmedNewPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.ConfirmedNewPassTextBox.TabIndex = 28;
+            this.DepartmentPanel.Controls.Add(this.AddDepartmentAndClassTeacherButton);
+            this.DepartmentPanel.Controls.Add(this.DepartmentNumberTextBox);
+            this.DepartmentPanel.Controls.Add(this.label32);
+            this.DepartmentPanel.Controls.Add(this.TeachersPanel);
+            this.DepartmentPanel.Controls.Add(this.AddCourseButton);
+            this.DepartmentPanel.Controls.Add(this.CourseTextBox);
+            this.DepartmentPanel.Controls.Add(this.label31);
+            this.DepartmentPanel.Controls.Add(this.CoursesCheckedListBox);
+            this.DepartmentPanel.Controls.Add(this.ClassTeacherComboBox);
+            this.DepartmentPanel.Controls.Add(this.ClassNumberComboBox);
+            this.DepartmentPanel.Controls.Add(this.label9);
+            this.DepartmentPanel.Controls.Add(this.label28);
+            this.DepartmentPanel.Controls.Add(this.label29);
+            this.DepartmentPanel.Controls.Add(this.label30);
+            this.DepartmentPanel.Controls.Add(this.SectionsTextBox);
+            this.DepartmentPanel.Location = new System.Drawing.Point(9, 96);
+            this.DepartmentPanel.Name = "DepartmentPanel";
+            this.DepartmentPanel.Size = new System.Drawing.Size(752, 374);
+            this.DepartmentPanel.TabIndex = 38;
             // 
-            // NewPassTextBox
+            // DepartmentNumberTextBox
             // 
-            this.NewPassTextBox.Location = new System.Drawing.Point(443, 166);
-            this.NewPassTextBox.Name = "NewPassTextBox";
-            this.NewPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.NewPassTextBox.TabIndex = 27;
+            this.DepartmentNumberTextBox.Location = new System.Drawing.Point(218, 75);
+            this.DepartmentNumberTextBox.Name = "DepartmentNumberTextBox";
+            this.DepartmentNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DepartmentNumberTextBox.TabIndex = 41;
             // 
-            // OldPassTextBox
+            // label32
             // 
-            this.OldPassTextBox.Location = new System.Drawing.Point(443, 125);
-            this.OldPassTextBox.Name = "OldPassTextBox";
-            this.OldPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.OldPassTextBox.TabIndex = 26;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(276, 58);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Promijenite lozinku";
-            // 
-            // AdministratorPanel
-            // 
-            this.AdministratorPanel.Controls.Add(this.label16);
-            this.AdministratorPanel.Controls.Add(this.UserNameTextBox);
-            this.AdministratorPanel.Controls.Add(this.AddAdminButton);
-            this.AdministratorPanel.Controls.Add(this.label14);
-            this.AdministratorPanel.Controls.Add(this.label15);
-            this.AdministratorPanel.Controls.Add(this.AdminSurnameTextBox);
-            this.AdministratorPanel.Controls.Add(this.AdminNameTextBox);
-            this.AdministratorPanel.Location = new System.Drawing.Point(6, 103);
-            this.AdministratorPanel.Name = "AdministratorPanel";
-            this.AdministratorPanel.Size = new System.Drawing.Size(738, 326);
-            this.AdministratorPanel.TabIndex = 36;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 33);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 13);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Ime";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Prezime";
-            // 
-            // AdminSurnameTextBox
-            // 
-            this.AdminSurnameTextBox.Location = new System.Drawing.Point(213, 74);
-            this.AdminSurnameTextBox.Name = "AdminSurnameTextBox";
-            this.AdminSurnameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.AdminSurnameTextBox.TabIndex = 3;
-            // 
-            // AdminNameTextBox
-            // 
-            this.AdminNameTextBox.Location = new System.Drawing.Point(213, 33);
-            this.AdminNameTextBox.Name = "AdminNameTextBox";
-            this.AdminNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.AdminNameTextBox.TabIndex = 2;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(16, 78);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(72, 13);
+            this.label32.TabIndex = 40;
+            this.label32.Text = "Broj odjeljenja";
             // 
             // StudentPanel
             // 
+            this.StudentPanel.Controls.Add(this.label42);
+            this.StudentPanel.Controls.Add(this.label44);
+            this.StudentPanel.Controls.Add(this.label43);
+            this.StudentPanel.Controls.Add(this.label26);
+            this.StudentPanel.Controls.Add(this.label25);
             this.StudentPanel.Controls.Add(this.label40);
             this.StudentPanel.Controls.Add(this.label39);
             this.StudentPanel.Controls.Add(this.label33);
             this.StudentPanel.Controls.Add(this.label34);
-            this.StudentPanel.Controls.Add(this.textBox1);
+            this.StudentPanel.Controls.Add(this.ParentPhoneTextBox);
             this.StudentPanel.Controls.Add(this.label35);
             this.StudentPanel.Controls.Add(this.ParentAddressTextBox);
             this.StudentPanel.Controls.Add(this.label36);
@@ -299,7 +278,7 @@
             this.StudentPanel.Controls.Add(this.StudentSurnameTextBox);
             this.StudentPanel.Controls.Add(this.label8);
             this.StudentPanel.Controls.Add(this.StudentNameTextBox);
-            this.StudentPanel.Location = new System.Drawing.Point(9, 99);
+            this.StudentPanel.Location = new System.Drawing.Point(9, 89);
             this.StudentPanel.Name = "StudentPanel";
             this.StudentPanel.Size = new System.Drawing.Size(738, 326);
             this.StudentPanel.TabIndex = 40;
@@ -340,12 +319,12 @@
             this.label34.TabIndex = 46;
             this.label34.Text = "Prezime";
             // 
-            // textBox1
+            // ParentPhoneTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(565, 221);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 52;
+            this.ParentPhoneTextBox.Location = new System.Drawing.Point(565, 221);
+            this.ParentPhoneTextBox.Name = "ParentPhoneTextBox";
+            this.ParentPhoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ParentPhoneTextBox.TabIndex = 52;
             // 
             // label35
             // 
@@ -404,7 +383,13 @@
             // 
             // DepartmentComboBox
             // 
+            this.DepartmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DepartmentComboBox.FormattingEnabled = true;
+            this.DepartmentComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.DepartmentComboBox.Location = new System.Drawing.Point(213, 259);
             this.DepartmentComboBox.Name = "DepartmentComboBox";
             this.DepartmentComboBox.Size = new System.Drawing.Size(100, 21);
@@ -446,7 +431,7 @@
             // 
             // StudentAddressTextBox
             // 
-            this.StudentAddressTextBox.Location = new System.Drawing.Point(213, 171);
+            this.StudentAddressTextBox.Location = new System.Drawing.Point(213, 167);
             this.StudentAddressTextBox.Name = "StudentAddressTextBox";
             this.StudentAddressTextBox.Size = new System.Drawing.Size(100, 20);
             this.StudentAddressTextBox.TabIndex = 5;
@@ -462,7 +447,7 @@
             // 
             // StudentJmbgTextBox
             // 
-            this.StudentJmbgTextBox.Location = new System.Drawing.Point(213, 122);
+            this.StudentJmbgTextBox.Location = new System.Drawing.Point(213, 115);
             this.StudentJmbgTextBox.Name = "StudentJmbgTextBox";
             this.StudentJmbgTextBox.Size = new System.Drawing.Size(100, 20);
             this.StudentJmbgTextBox.TabIndex = 4;
@@ -478,7 +463,7 @@
             // 
             // StudentSurnameTextBox
             // 
-            this.StudentSurnameTextBox.Location = new System.Drawing.Point(213, 74);
+            this.StudentSurnameTextBox.Location = new System.Drawing.Point(213, 67);
             this.StudentSurnameTextBox.Name = "StudentSurnameTextBox";
             this.StudentSurnameTextBox.Size = new System.Drawing.Size(100, 20);
             this.StudentSurnameTextBox.TabIndex = 3;
@@ -494,146 +479,10 @@
             // 
             // StudentNameTextBox
             // 
-            this.StudentNameTextBox.Location = new System.Drawing.Point(213, 33);
+            this.StudentNameTextBox.Location = new System.Drawing.Point(213, 26);
             this.StudentNameTextBox.Name = "StudentNameTextBox";
             this.StudentNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.StudentNameTextBox.TabIndex = 2;
-            // 
-            // TeachersPanel
-            // 
-            this.TeachersPanel.AutoSize = true;
-            this.TeachersPanel.Controls.Add(this.AddTeacherButton);
-            this.TeachersPanel.Controls.Add(this.label17);
-            this.TeachersPanel.Controls.Add(this.label18);
-            this.TeachersPanel.Controls.Add(this.TeacherPasswordTextBox);
-            this.TeachersPanel.Controls.Add(this.label19);
-            this.TeachersPanel.Controls.Add(this.TeacherPhoneTextBox);
-            this.TeachersPanel.Controls.Add(this.label20);
-            this.TeachersPanel.Controls.Add(this.TeacherAddressTextBox);
-            this.TeachersPanel.Controls.Add(this.label21);
-            this.TeachersPanel.Controls.Add(this.TeacherSurnameTextBox);
-            this.TeachersPanel.Controls.Add(this.TeacherNameTextBox);
-            this.TeachersPanel.Location = new System.Drawing.Point(12, 99);
-            this.TeachersPanel.Name = "TeachersPanel";
-            this.TeachersPanel.Size = new System.Drawing.Size(1182, 342);
-            this.TeachersPanel.TabIndex = 42;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(13, 33);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(24, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Ime";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 74);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Prezime";
-            // 
-            // TeacherPasswordTextBox
-            // 
-            this.TeacherPasswordTextBox.Location = new System.Drawing.Point(213, 221);
-            this.TeacherPasswordTextBox.Name = "TeacherPasswordTextBox";
-            this.TeacherPasswordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TeacherPasswordTextBox.TabIndex = 6;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(13, 122);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 13);
-            this.label19.TabIndex = 12;
-            this.label19.Text = "Adresa";
-            // 
-            // TeacherPhoneTextBox
-            // 
-            this.TeacherPhoneTextBox.Location = new System.Drawing.Point(213, 171);
-            this.TeacherPhoneTextBox.Name = "TeacherPhoneTextBox";
-            this.TeacherPhoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TeacherPhoneTextBox.TabIndex = 5;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 171);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(43, 13);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Telefon";
-            // 
-            // TeacherAddressTextBox
-            // 
-            this.TeacherAddressTextBox.Location = new System.Drawing.Point(213, 122);
-            this.TeacherAddressTextBox.Name = "TeacherAddressTextBox";
-            this.TeacherAddressTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TeacherAddressTextBox.TabIndex = 4;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(13, 223);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 13);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "Lozinka";
-            // 
-            // TeacherSurnameTextBox
-            // 
-            this.TeacherSurnameTextBox.Location = new System.Drawing.Point(213, 74);
-            this.TeacherSurnameTextBox.Name = "TeacherSurnameTextBox";
-            this.TeacherSurnameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TeacherSurnameTextBox.TabIndex = 3;
-            // 
-            // TeacherNameTextBox
-            // 
-            this.TeacherNameTextBox.Location = new System.Drawing.Point(213, 33);
-            this.TeacherNameTextBox.Name = "TeacherNameTextBox";
-            this.TeacherNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.TeacherNameTextBox.TabIndex = 2;
-            // 
-            // DepartmentPanel
-            // 
-            this.DepartmentPanel.Controls.Add(this.AddDepartmentAndClassTeacherButton);
-            this.DepartmentPanel.Controls.Add(this.DepartmentNumberTextBox);
-            this.DepartmentPanel.Controls.Add(this.label32);
-            this.DepartmentPanel.Controls.Add(this.AddCourseButton);
-            this.DepartmentPanel.Controls.Add(this.CourseTextBox);
-            this.DepartmentPanel.Controls.Add(this.label31);
-            this.DepartmentPanel.Controls.Add(this.CoursesCheckedListBox);
-            this.DepartmentPanel.Controls.Add(this.ClassTeacherComboBox);
-            this.DepartmentPanel.Controls.Add(this.ClassNumberComboBox);
-            this.DepartmentPanel.Controls.Add(this.label9);
-            this.DepartmentPanel.Controls.Add(this.label28);
-            this.DepartmentPanel.Controls.Add(this.label29);
-            this.DepartmentPanel.Controls.Add(this.label30);
-            this.DepartmentPanel.Controls.Add(this.SectionsTextBox);
-            this.DepartmentPanel.Location = new System.Drawing.Point(9, 93);
-            this.DepartmentPanel.Name = "DepartmentPanel";
-            this.DepartmentPanel.Size = new System.Drawing.Size(752, 374);
-            this.DepartmentPanel.TabIndex = 38;
-            // 
-            // DepartmentNumberTextBox
-            // 
-            this.DepartmentNumberTextBox.Location = new System.Drawing.Point(218, 75);
-            this.DepartmentNumberTextBox.Name = "DepartmentNumberTextBox";
-            this.DepartmentNumberTextBox.Size = new System.Drawing.Size(100, 20);
-            this.DepartmentNumberTextBox.TabIndex = 41;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(16, 78);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(72, 13);
-            this.label32.TabIndex = 40;
-            this.label32.Text = "Broj odjeljenja";
             // 
             // CourseTextBox
             // 
@@ -756,6 +605,81 @@
             this.SectionsTextBox.Size = new System.Drawing.Size(100, 20);
             this.SectionsTextBox.TabIndex = 18;
             // 
+            // ConfirmedNewPassTextBox
+            // 
+            this.ConfirmedNewPassTextBox.Location = new System.Drawing.Point(443, 214);
+            this.ConfirmedNewPassTextBox.Name = "ConfirmedNewPassTextBox";
+            this.ConfirmedNewPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.ConfirmedNewPassTextBox.TabIndex = 28;
+            // 
+            // NewPassTextBox
+            // 
+            this.NewPassTextBox.Location = new System.Drawing.Point(443, 166);
+            this.NewPassTextBox.Name = "NewPassTextBox";
+            this.NewPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.NewPassTextBox.TabIndex = 27;
+            // 
+            // OldPassTextBox
+            // 
+            this.OldPassTextBox.Location = new System.Drawing.Point(443, 125);
+            this.OldPassTextBox.Name = "OldPassTextBox";
+            this.OldPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.OldPassTextBox.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(276, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Promijenite lozinku";
+            // 
+            // AdministratorPanel
+            // 
+            this.AdministratorPanel.Controls.Add(this.label24);
+            this.AdministratorPanel.Controls.Add(this.label23);
+            this.AdministratorPanel.Controls.Add(this.label22);
+            this.AdministratorPanel.Controls.Add(this.label16);
+            this.AdministratorPanel.Controls.Add(this.UserNameTextBox);
+            this.AdministratorPanel.Controls.Add(this.AddAdminButton);
+            this.AdministratorPanel.Controls.Add(this.label14);
+            this.AdministratorPanel.Controls.Add(this.label15);
+            this.AdministratorPanel.Controls.Add(this.AdminSurnameTextBox);
+            this.AdministratorPanel.Controls.Add(this.AdminNameTextBox);
+            this.AdministratorPanel.Location = new System.Drawing.Point(16, 93);
+            this.AdministratorPanel.Name = "AdministratorPanel";
+            this.AdministratorPanel.Size = new System.Drawing.Size(504, 329);
+            this.AdministratorPanel.TabIndex = 36;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(187, 77);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(11, 13);
+            this.label24.TabIndex = 40;
+            this.label24.Text = "*";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(187, 111);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(11, 13);
+            this.label23.TabIndex = 39;
+            this.label23.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(187, 36);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(11, 13);
+            this.label22.TabIndex = 38;
+            this.label22.Text = "*";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -772,35 +696,205 @@
             this.UserNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.UserNameTextBox.TabIndex = 4;
             // 
-            // ControlTableButton
+            // label14
             // 
-            this.ControlTableButton.Location = new System.Drawing.Point(238, 9);
-            this.ControlTableButton.Name = "ControlTableButton";
-            this.ControlTableButton.Size = new System.Drawing.Size(132, 24);
-            this.ControlTableButton.TabIndex = 71;
-            this.ControlTableButton.Text = "Kontrolna Tabla";
-            this.ControlTableButton.UseVisualStyleBackColor = true;
-            this.ControlTableButton.Click += new System.EventHandler(this.ControlTableButton_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 33);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Ime";
             // 
-            // AddAdminButton
+            // label15
             // 
-            this.AddAdminButton.Location = new System.Drawing.Point(213, 163);
-            this.AddAdminButton.Name = "AddAdminButton";
-            this.AddAdminButton.Size = new System.Drawing.Size(100, 23);
-            this.AddAdminButton.TabIndex = 35;
-            this.AddAdminButton.Text = "Potvrdite";
-            this.AddAdminButton.UseVisualStyleBackColor = true;
-            this.AddAdminButton.Click += new System.EventHandler(this.AddAdminButton_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Prezime";
             // 
-            // AddStudentButton
+            // AdminSurnameTextBox
             // 
-            this.AddStudentButton.Location = new System.Drawing.Point(444, 267);
-            this.AddStudentButton.Name = "AddStudentButton";
-            this.AddStudentButton.Size = new System.Drawing.Size(100, 23);
-            this.AddStudentButton.TabIndex = 36;
-            this.AddStudentButton.Text = "Potvrdite";
-            this.AddStudentButton.UseVisualStyleBackColor = true;
-            this.AddStudentButton.Click += new System.EventHandler(this.AddStudentButton_Click);
+            this.AdminSurnameTextBox.Location = new System.Drawing.Point(213, 74);
+            this.AdminSurnameTextBox.Name = "AdminSurnameTextBox";
+            this.AdminSurnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AdminSurnameTextBox.TabIndex = 3;
+            // 
+            // AdminNameTextBox
+            // 
+            this.AdminNameTextBox.Location = new System.Drawing.Point(213, 33);
+            this.AdminNameTextBox.Name = "AdminNameTextBox";
+            this.AdminNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.AdminNameTextBox.TabIndex = 2;
+            // 
+            // TeachersPanel
+            // 
+            this.TeachersPanel.AutoSize = true;
+            this.TeachersPanel.Controls.Add(this.label21);
+            this.TeachersPanel.Controls.Add(this.label41);
+            this.TeachersPanel.Controls.Add(this.TeacherUserNameTextBox);
+            this.TeachersPanel.Controls.Add(this.label38);
+            this.TeachersPanel.Controls.Add(this.label27);
+            this.TeachersPanel.Controls.Add(this.AddTeacherButton);
+            this.TeachersPanel.Controls.Add(this.label17);
+            this.TeachersPanel.Controls.Add(this.label18);
+            this.TeachersPanel.Controls.Add(this.label19);
+            this.TeachersPanel.Controls.Add(this.TeacherPhoneTextBox);
+            this.TeachersPanel.Controls.Add(this.label20);
+            this.TeachersPanel.Controls.Add(this.TeacherAddressTextBox);
+            this.TeachersPanel.Controls.Add(this.TeacherSurnameTextBox);
+            this.TeachersPanel.Controls.Add(this.TeacherNameTextBox);
+            this.TeachersPanel.Location = new System.Drawing.Point(3, 96);
+            this.TeachersPanel.Name = "TeachersPanel";
+            this.TeachersPanel.Size = new System.Drawing.Size(761, 380);
+            this.TeachersPanel.TabIndex = 42;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(196, 105);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(11, 13);
+            this.label21.TabIndex = 77;
+            this.label21.Text = "*";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(13, 109);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(76, 13);
+            this.label41.TabIndex = 76;
+            this.label41.Text = "Korisničko Ime";
+            // 
+            // TeacherUserNameTextBox
+            // 
+            this.TeacherUserNameTextBox.Location = new System.Drawing.Point(213, 102);
+            this.TeacherUserNameTextBox.Name = "TeacherUserNameTextBox";
+            this.TeacherUserNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TeacherUserNameTextBox.TabIndex = 4;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(196, 70);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(11, 13);
+            this.label38.TabIndex = 74;
+            this.label38.Text = "*";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(196, 29);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(11, 13);
+            this.label27.TabIndex = 73;
+            this.label27.Text = "*";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(13, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(24, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Ime";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(13, 70);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Prezime";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(13, 147);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(40, 13);
+            this.label19.TabIndex = 12;
+            this.label19.Text = "Adresa";
+            // 
+            // TeacherPhoneTextBox
+            // 
+            this.TeacherPhoneTextBox.Location = new System.Drawing.Point(213, 189);
+            this.TeacherPhoneTextBox.Name = "TeacherPhoneTextBox";
+            this.TeacherPhoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TeacherPhoneTextBox.TabIndex = 6;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(13, 196);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(43, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Telefon";
+            // 
+            // TeacherAddressTextBox
+            // 
+            this.TeacherAddressTextBox.Location = new System.Drawing.Point(213, 144);
+            this.TeacherAddressTextBox.Name = "TeacherAddressTextBox";
+            this.TeacherAddressTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TeacherAddressTextBox.TabIndex = 5;
+            // 
+            // TeacherSurnameTextBox
+            // 
+            this.TeacherSurnameTextBox.Location = new System.Drawing.Point(213, 63);
+            this.TeacherSurnameTextBox.Name = "TeacherSurnameTextBox";
+            this.TeacherSurnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TeacherSurnameTextBox.TabIndex = 3;
+            // 
+            // TeacherNameTextBox
+            // 
+            this.TeacherNameTextBox.Location = new System.Drawing.Point(213, 22);
+            this.TeacherNameTextBox.Name = "TeacherNameTextBox";
+            this.TeacherNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.TeacherNameTextBox.TabIndex = 2;
+            // 
+            // warLabel
+            // 
+            this.warLabel.AutoSize = true;
+            this.warLabel.Location = new System.Drawing.Point(621, 470);
+            this.warLabel.Name = "warLabel";
+            this.warLabel.Size = new System.Drawing.Size(11, 13);
+            this.warLabel.TabIndex = 72;
+            this.warLabel.Text = "*";
+            // 
+            // WarLabel1
+            // 
+            this.WarLabel1.AutoSize = true;
+            this.WarLabel1.Location = new System.Drawing.Point(638, 470);
+            this.WarLabel1.Name = "WarLabel1";
+            this.WarLabel1.Size = new System.Drawing.Size(94, 13);
+            this.WarLabel1.TabIndex = 73;
+            this.WarLabel1.Text = "Polja su obavezna";
+            // 
+            // AddTeacherButton
+            // 
+            this.AddTeacherButton.Location = new System.Drawing.Point(213, 241);
+            this.AddTeacherButton.Name = "AddTeacherButton";
+            this.AddTeacherButton.Size = new System.Drawing.Size(100, 23);
+            this.AddTeacherButton.TabIndex = 37;
+            this.AddTeacherButton.Text = "Potvrdite";
+            this.AddTeacherButton.UseVisualStyleBackColor = true;
+            this.AddTeacherButton.Click += new System.EventHandler(this.AddTeacherButton_Click);
+            // 
+            // ChangePassAdminButton
+            // 
+            this.ChangePassAdminButton.Location = new System.Drawing.Point(443, 262);
+            this.ChangePassAdminButton.Name = "ChangePassAdminButton";
+            this.ChangePassAdminButton.Size = new System.Drawing.Size(130, 23);
+            this.ChangePassAdminButton.TabIndex = 34;
+            this.ChangePassAdminButton.Text = "Potvrdite promjenu";
+            this.ChangePassAdminButton.UseVisualStyleBackColor = true;
+            this.ChangePassAdminButton.Click += new System.EventHandler(this.ChangePassAdminButton_Click);
             // 
             // AddDepartmentAndClassTeacherButton
             // 
@@ -822,15 +916,35 @@
             this.AddCourseButton.UseVisualStyleBackColor = true;
             this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
             // 
-            // ChangePassAdminButton
+            // AddStudentButton
             // 
-            this.ChangePassAdminButton.Location = new System.Drawing.Point(443, 262);
-            this.ChangePassAdminButton.Name = "ChangePassAdminButton";
-            this.ChangePassAdminButton.Size = new System.Drawing.Size(130, 23);
-            this.ChangePassAdminButton.TabIndex = 34;
-            this.ChangePassAdminButton.Text = "Potvrdite promjenu";
-            this.ChangePassAdminButton.UseVisualStyleBackColor = true;
-            this.ChangePassAdminButton.Click += new System.EventHandler(this.ChangePassAdminButton_Click);
+            this.AddStudentButton.Location = new System.Drawing.Point(444, 267);
+            this.AddStudentButton.Name = "AddStudentButton";
+            this.AddStudentButton.Size = new System.Drawing.Size(100, 23);
+            this.AddStudentButton.TabIndex = 36;
+            this.AddStudentButton.Text = "Potvrdite";
+            this.AddStudentButton.UseVisualStyleBackColor = true;
+            this.AddStudentButton.Click += new System.EventHandler(this.AddStudentButton_Click);
+            // 
+            // AddAdminButton
+            // 
+            this.AddAdminButton.Location = new System.Drawing.Point(213, 163);
+            this.AddAdminButton.Name = "AddAdminButton";
+            this.AddAdminButton.Size = new System.Drawing.Size(100, 23);
+            this.AddAdminButton.TabIndex = 35;
+            this.AddAdminButton.Text = "Potvrdite";
+            this.AddAdminButton.UseVisualStyleBackColor = true;
+            this.AddAdminButton.Click += new System.EventHandler(this.AddAdminButton_Click);
+            // 
+            // ControlTableButton
+            // 
+            this.ControlTableButton.Location = new System.Drawing.Point(238, 9);
+            this.ControlTableButton.Name = "ControlTableButton";
+            this.ControlTableButton.Size = new System.Drawing.Size(132, 24);
+            this.ControlTableButton.TabIndex = 71;
+            this.ControlTableButton.Text = "Kontrolna Tabla";
+            this.ControlTableButton.UseVisualStyleBackColor = true;
+            this.ControlTableButton.Click += new System.EventHandler(this.ControlTableButton_Click);
             // 
             // UserSettingsButton
             // 
@@ -852,15 +966,50 @@
             this.LogOutUserButton.UseVisualStyleBackColor = true;
             this.LogOutUserButton.Click += new System.EventHandler(this.LogOutUserButton_Click);
             // 
-            // AddTeacherButton
+            // label25
             // 
-            this.AddTeacherButton.Location = new System.Drawing.Point(213, 275);
-            this.AddTeacherButton.Name = "AddTeacherButton";
-            this.AddTeacherButton.Size = new System.Drawing.Size(100, 23);
-            this.AddTeacherButton.TabIndex = 37;
-            this.AddTeacherButton.Text = "Potvrdite";
-            this.AddTeacherButton.UseVisualStyleBackColor = true;
-            this.AddTeacherButton.Click += new System.EventHandler(this.AddTeacherButton_Click);
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(194, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(11, 13);
+            this.label25.TabIndex = 73;
+            this.label25.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(194, 74);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(11, 13);
+            this.label26.TabIndex = 74;
+            this.label26.Text = "*";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(194, 33);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(11, 13);
+            this.label43.TabIndex = 76;
+            this.label43.Text = "*";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(548, 37);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(11, 13);
+            this.label42.TabIndex = 79;
+            this.label42.Text = "*";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(548, 78);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(11, 13);
+            this.label44.TabIndex = 78;
+            this.label44.Text = "*";
             // 
             // AdministrationForm
             // 
@@ -868,15 +1017,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(773, 498);
-            this.Controls.Add(this.ControlTableButton);
-            this.Controls.Add(this.AdministratorPanel);
             this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.DepartmentPanel);
             this.Controls.Add(this.PasswordPanel);
+            this.Controls.Add(this.AdministratorPanel);
+            this.Controls.Add(this.WarLabel1);
+            this.Controls.Add(this.warLabel);
+            this.Controls.Add(this.ControlTableButton);
             this.Controls.Add(this.UserSettingsButton);
             this.Controls.Add(this.LogOutUserButton);
             this.Controls.Add(this.UserBox);
-            this.Controls.Add(this.TeachersPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -888,14 +1038,14 @@
             this.Load += new System.EventHandler(this.AdministrationForm_Load);
             this.PasswordPanel.ResumeLayout(false);
             this.PasswordPanel.PerformLayout();
-            this.AdministratorPanel.ResumeLayout(false);
-            this.AdministratorPanel.PerformLayout();
-            this.StudentPanel.ResumeLayout(false);
-            this.StudentPanel.PerformLayout();
-            this.TeachersPanel.ResumeLayout(false);
-            this.TeachersPanel.PerformLayout();
             this.DepartmentPanel.ResumeLayout(false);
             this.DepartmentPanel.PerformLayout();
+            this.StudentPanel.ResumeLayout(false);
+            this.StudentPanel.PerformLayout();
+            this.AdministratorPanel.ResumeLayout(false);
+            this.AdministratorPanel.PerformLayout();
+            this.TeachersPanel.ResumeLayout(false);
+            this.TeachersPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -934,12 +1084,10 @@
         private System.Windows.Forms.Panel TeachersPanel;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox TeacherPasswordTextBox;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox TeacherPhoneTextBox;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox TeacherAddressTextBox;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox TeacherSurnameTextBox;
         private System.Windows.Forms.TextBox TeacherNameTextBox;
         private System.Windows.Forms.Panel DepartmentPanel;
@@ -959,7 +1107,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ParentPhoneTextBox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox ParentAddressTextBox;
         private System.Windows.Forms.Label label36;
@@ -979,5 +1127,20 @@
         private RoundedButton ControlTableButton;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox UserNameTextBox;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label warLabel;
+        private System.Windows.Forms.Label WarLabel1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox TeacherUserNameTextBox;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
     }
 }

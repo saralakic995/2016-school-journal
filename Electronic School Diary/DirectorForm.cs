@@ -16,7 +16,6 @@ namespace ElectronicSchoolDiary
     {
         private User CurrentUser;
         private Director CurrentDirector;
-        public bool isPasswordChanged = false;
 
         public void warning()
         {
@@ -40,17 +39,9 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            if (isPasswordChanged == false)
-            {
                 Form form = new LoginForm();
                 form.Show();
                 this.Close();
-            }
-            else
-            {
-                Environment.Exit(0);
-                Close();
-            }
         }
         private string selectedUser()
         {
@@ -190,11 +181,19 @@ namespace ElectronicSchoolDiary
                 }
                 else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
                 {
-                    UsersRepository.ChangeAdminPassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
-                    isPasswordChanged = true;
-                    OldPassTextBox.Text = "";
-                    NewPassTextBox.Text = "";
-                    ConfirmedNewPassTextBox.Text = "";
+                   bool isChanged =  UsersRepository.ChangePassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                   if(isChanged == true)
+                    {
+                        ChoseComboBox.SelectedIndex = 0;
+                        AdminPanel.Show();
+                        label2.Show();
+                        ChoseComboBox.Show();
+                        TeacherPanel.Hide();
+                        StudentAndParentPanel.Hide();
+                        DepartmentsPanel.Hide();
+                        PasswordPanel.Hide();
+                        UserSettingsButton.Hide();
+                    }
                 }
                 else if (NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
                     MessageBox.Show("Nove lozinke se ne poklapaju !");

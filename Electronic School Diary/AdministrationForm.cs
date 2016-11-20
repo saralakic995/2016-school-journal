@@ -17,8 +17,6 @@ namespace ElectronicSchoolDiary
     {
         private User CurrentUser;
         private Admin CurrentAdmin;
-        public bool isPasswordChanged = false;
-
         public void warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
@@ -113,17 +111,11 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            if (isPasswordChanged == false)
-            {
+          
                 Form form = new LoginForm();
                 form.Show();
                 this.Close();
-            }
-            else
-            {
-                Environment.Exit(0);
-                Close();
-            }
+         
         }
 
         private void AddAdminButton_Click(object sender, EventArgs e)
@@ -134,8 +126,14 @@ namespace ElectronicSchoolDiary
             }
             else
             {
-               
-                AdminRepository.AddAdmin(AdminNameTextBox.Text, AdminSurnameTextBox.Text, UserNameTextBox.Text, AdminNameTextBox.Text + AdminSurnameTextBox.Text);
+              bool isAdminAdded =   AdminRepository.AddAdmin(AdminNameTextBox.Text, AdminSurnameTextBox.Text, UserNameTextBox.Text, AdminNameTextBox.Text + AdminSurnameTextBox.Text);
+                if(isAdminAdded == true)
+                {
+                    AdminNameTextBox.Text = "";
+                    AdminSurnameTextBox.Text = "";
+                    UserNameTextBox.Text = "";
+
+                }
             }
         }
 
@@ -150,17 +148,25 @@ namespace ElectronicSchoolDiary
             }
             else
             {
-                if (OldPassTextBox.Text == NewPassTextBox.Text)
+                if (OldPassTextBox.Text == NewPassTextBox.Text && OldPassTextBox.Text == CurrentUser.Password)
                 {
                     MessageBox.Show("Unesite novu lozinku koja se razlikuje od stare !");
                 }
                 else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
                 {
-                    UsersRepository.ChangeAdminPassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
-                    isPasswordChanged = true;
-                    OldPassTextBox.Text = "";
-                    NewPassTextBox.Text = "";
-                    ConfirmedNewPassTextBox.Text = "";
+                   bool isChanged =  UsersRepository.ChangePassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                    if (isChanged == true)
+                    {
+                        StudentPanel.Show();
+                        label2.Show();
+                        UserBox.Show();
+                        TeachersPanel.Hide();
+                        AdministratorPanel.Hide();
+                        DepartmentPanel.Hide();
+                        PasswordPanel.Hide();
+                        UserSettingsButton.Hide();
+                    }
+                    
                 }
                 else if(NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
                 MessageBox.Show("Nove lozinke se ne poklapaju !");
@@ -182,9 +188,32 @@ namespace ElectronicSchoolDiary
         {
             if (StudentNameTextBox.Text.Length == 0 ||
             StudentSurnameTextBox.Text.Length == 0 ||
-            StudentJmbgTextBox.Text.Length == 0 )
+            StudentJmbgTextBox.Text.Length == 0 ||
+            ParentNameTextBox.Text.Length == 0||
+            ParentSurnameTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+              //  bool isStudentAdded = StudentRepository.AddStudent(StudentNameTextBox.Text, StudentSurnameTextBox.Text, StudentJmbgTextBox.Text, StudentAddressTextBox.Text, StudentPhoneTextBox.Text);
+                bool isParentAdded = ParentRepository.AddParent(ParentNameTextBox.Text, ParentSurnameTextBox.Text, ParentAddressTextBox.Text, ParentEmailTextBox.Text, ParentPhoneTextBox.Text, StudentJmbgTextBox.Text);
+                if( isParentAdded == true)
+                {
+                    StudentNameTextBox.Text = "";
+                    StudentSurnameTextBox.Text = "";
+                    StudentJmbgTextBox.Text = "";
+                    StudentAddressTextBox.Text = "";
+                    StudentPhoneTextBox.Text = "";
+                    DepartmentComboBox.Text = "";
+
+                    ParentNameTextBox.Text = "";
+                    ParentSurnameTextBox.Text = "";
+                    ParentAddressTextBox.Text = "";
+                    ParentEmailTextBox.Text = "";
+                    ParentPhoneTextBox.Text = "";
+                    StudentJmbgTextBox.Text = "";
+                }
             }
         }
 
@@ -192,10 +221,22 @@ namespace ElectronicSchoolDiary
         {
 
            if (TeacherNameTextBox.Text.Length == 0 ||
-              TeacherSurnameTextBox.Text.Length == 0 ||
-              TeacherPasswordTextBox.Text.Length == 0)
+                TeacherSurnameTextBox.Text.Length == 0 ||
+                TeacherUserNameTextBox.Text.Length == 0 )
             {
                 warning();
+            }
+           else
+            {
+                bool isTeacherAdded = TeacherRepository.AddTeacher(TeacherNameTextBox.Text, TeacherSurnameTextBox.Text, TeacherUserNameTextBox.Text,TeacherAddressTextBox.Text,TeacherPhoneTextBox.Text, TeacherNameTextBox.Text + TeacherSurnameTextBox.Text);
+                if(isTeacherAdded == true)
+                {
+                    TeacherNameTextBox.Text = "";
+                    TeacherSurnameTextBox.Text = "";
+                    TeacherUserNameTextBox.Text = "";
+                    TeacherAddressTextBox.Text = "";
+                    TeacherPhoneTextBox.Text = "";
+                }
             }
         }
 
@@ -232,5 +273,6 @@ namespace ElectronicSchoolDiary
                 warning();
             }
         }
+        
     }
 }

@@ -11,49 +11,35 @@ namespace ElectronicSchoolDiary.Repos
 {
     class AdminRepository
     {
-        public static void AddAdmin(string AdminName, string AdminSurname,string AdminUserName,string Password)
+        public static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+        public static bool AddAdmin(string AdminName, string AdminSurname,string AdminUserName,string Password)
         {
+            bool flag = false;
+            
             try
             {
-                using (SqlCeConnection Connection = DataBaseConnection.Instance.Connection)
+                   UsersRepository.InsertUser(AdminUserName, Password);
+                   int AdminId = UsersRepository.GetIdByName(AdminUserName, Password);
 
-                {
-                    SqlCeCommand command1 = new SqlCeCommand(@"INSERT INTO Users(Name,Password)
-                    VALUES(@name, @password)", Connection);
-                    command1.Parameters.AddWithValue("@name", AdminUserName);
-                    command1.Parameters.AddWithValue("@password", Password);
-
-                    SqlCeCommand command2 = new SqlCeCommand(@"SELECT Id FROM Users WHERE UserName = @name,Password = @password ",Connection);
-                    command1.Parameters.AddWithValue("@name", AdminUserName);
-                    command1.Parameters.AddWithValue("@password", Password);
-                    SqlCeDataReader reader = command2.ExecuteReader();
-                    reader.Read();
-                    
-                    SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Administration(Name,Surname,UsersId)
-                    VALUES(@name, @surname, @usersId)", Connection);
+                    SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Administration (Name,Surname,UsersId)
+                    VALUES (@name, @surname, @usersId)", Connection);
                     command.Parameters.AddWithValue("@name", AdminName);
                     command.Parameters.AddWithValue("@surname", AdminSurname);
-                    command.Parameters.AddWithValue("@usersId", reader["Id"]);
-                    
+                    command.Parameters.AddWithValue("@usersId", AdminId);
                     int result = command.ExecuteNonQuery();
-                    int result1 = command1.ExecuteNonQuery();
-                    if (result > 0 && result1 > 0)
+                    if (result > 0)
                     {
-                        MessageBox.Show("Administrator uspješno dodat !");
-
+                        flag = true;
+                        MessageBox.Show("Administrator je uspješno dodat !");
                     }
-                    else
-                    {
-                        MessageBox.Show("Administrator nije  dodat !");
-                    }
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return flag;
 
         }
-
     }
 }

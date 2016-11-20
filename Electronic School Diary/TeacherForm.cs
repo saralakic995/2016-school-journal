@@ -17,7 +17,6 @@ namespace ElectronicSchoolDiary
     {
         private User CurrentUser;
         private Teacher CurrentTeacher;
-        public bool isPasswordChanged = false;
 
         public void warning()
         {
@@ -43,17 +42,9 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            if (isPasswordChanged == false)
-            {
                 Form form = new LoginForm();
                 form.Show();
                 this.Close();
-            }
-            else
-            {
-                Environment.Exit(0);
-                Close();
-            }
         }
 
         private void UserSettingsButton_Click(object sender, EventArgs e)
@@ -102,11 +93,12 @@ namespace ElectronicSchoolDiary
                 }
                 else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
                 {
-                    UsersRepository.ChangeAdminPassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
-                    isPasswordChanged = true;
-                    OldPassTextBox.Text = "";
-                    NewPassTextBox.Text = "";
-                    ConfirmedNewPassTextBox.Text = "";
+                   bool isChanged = UsersRepository.ChangePassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                  if(isChanged == true)
+                    {
+                        PasswordPanel.Hide();
+                        UserSettingsButton.Hide();
+                    }
                 }
                 else if (NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
                     MessageBox.Show("Nove lozinke se ne poklapaju !");
