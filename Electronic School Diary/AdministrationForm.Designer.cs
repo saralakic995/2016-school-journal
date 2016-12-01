@@ -37,10 +37,35 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.ConfirmedNewPassTextBox = new System.Windows.Forms.TextBox();
+            this.NewPassTextBox = new System.Windows.Forms.TextBox();
+            this.OldPassTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.DepartmentPanel = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.SectionsComboBox = new System.Windows.Forms.ComboBox();
+            this.SectionsNameTextBox = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.ClassComboBox = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.DepartmentNumberTextBox = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.CourseTextBox = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.CoursesCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.ClassTeacherComboBox = new System.Windows.Forms.ComboBox();
+            this.ClassNumberComboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.StudentPanel = new System.Windows.Forms.Panel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -65,21 +90,17 @@
             this.StudentSurnameTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.StudentNameTextBox = new System.Windows.Forms.TextBox();
-            this.CourseTextBox = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.CoursesCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.ClassTeacherComboBox = new System.Windows.Forms.ComboBox();
-            this.ClassNumberComboBox = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.SectionsTextBox = new System.Windows.Forms.TextBox();
-            this.ConfirmedNewPassTextBox = new System.Windows.Forms.TextBox();
-            this.NewPassTextBox = new System.Windows.Forms.TextBox();
-            this.OldPassTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.AdministratorPanel = new System.Windows.Forms.Panel();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.DirectorUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.DirectorSurnameTextBox = new System.Windows.Forms.TextBox();
+            this.DirectorNameTextBox = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -89,6 +110,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.AdminSurnameTextBox = new System.Windows.Forms.TextBox();
             this.AdminNameTextBox = new System.Windows.Forms.TextBox();
+            this.warLabel = new System.Windows.Forms.Label();
+            this.WarLabel1 = new System.Windows.Forms.Label();
             this.TeachersPanel = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -103,22 +126,17 @@
             this.TeacherAddressTextBox = new System.Windows.Forms.TextBox();
             this.TeacherSurnameTextBox = new System.Windows.Forms.TextBox();
             this.TeacherNameTextBox = new System.Windows.Forms.TextBox();
-            this.warLabel = new System.Windows.Forms.Label();
-            this.WarLabel1 = new System.Windows.Forms.Label();
-            this.AddTeacherButton = new ElectronicSchoolDiary.RoundedButton();
-            this.ChangePassAdminButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddSectionsButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddDepartmentAndClassTeacherButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddCourseButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddStudentButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddDirectorButton = new ElectronicSchoolDiary.RoundedButton();
             this.AddAdminButton = new ElectronicSchoolDiary.RoundedButton();
+            this.AddTeacherButton = new ElectronicSchoolDiary.RoundedButton();
+            this.ChangePassAdminButton = new ElectronicSchoolDiary.RoundedButton();
             this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
             this.UserSettingsButton = new ElectronicSchoolDiary.RoundedButton();
             this.LogOutUserButton = new ElectronicSchoolDiary.RoundedButton();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.PasswordPanel.SuspendLayout();
             this.DepartmentPanel.SuspendLayout();
             this.StudentPanel.SuspendLayout();
@@ -208,12 +226,50 @@
             this.label13.TabIndex = 31;
             this.label13.Text = "Potvrdite novu lozinku";
             // 
+            // ConfirmedNewPassTextBox
+            // 
+            this.ConfirmedNewPassTextBox.Location = new System.Drawing.Point(443, 214);
+            this.ConfirmedNewPassTextBox.Name = "ConfirmedNewPassTextBox";
+            this.ConfirmedNewPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.ConfirmedNewPassTextBox.TabIndex = 28;
+            // 
+            // NewPassTextBox
+            // 
+            this.NewPassTextBox.Location = new System.Drawing.Point(443, 166);
+            this.NewPassTextBox.Name = "NewPassTextBox";
+            this.NewPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.NewPassTextBox.TabIndex = 27;
+            // 
+            // OldPassTextBox
+            // 
+            this.OldPassTextBox.Location = new System.Drawing.Point(443, 125);
+            this.OldPassTextBox.Name = "OldPassTextBox";
+            this.OldPassTextBox.Size = new System.Drawing.Size(130, 20);
+            this.OldPassTextBox.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(276, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Promijenite lozinku";
+            // 
             // DepartmentPanel
             // 
+            this.DepartmentPanel.Controls.Add(this.label48);
+            this.DepartmentPanel.Controls.Add(this.SectionsComboBox);
+            this.DepartmentPanel.Controls.Add(this.AddSectionsButton);
+            this.DepartmentPanel.Controls.Add(this.SectionsNameTextBox);
+            this.DepartmentPanel.Controls.Add(this.label47);
+            this.DepartmentPanel.Controls.Add(this.ClassComboBox);
+            this.DepartmentPanel.Controls.Add(this.label46);
+            this.DepartmentPanel.Controls.Add(this.label45);
             this.DepartmentPanel.Controls.Add(this.AddDepartmentAndClassTeacherButton);
             this.DepartmentPanel.Controls.Add(this.DepartmentNumberTextBox);
             this.DepartmentPanel.Controls.Add(this.label32);
-            this.DepartmentPanel.Controls.Add(this.TeachersPanel);
             this.DepartmentPanel.Controls.Add(this.AddCourseButton);
             this.DepartmentPanel.Controls.Add(this.CourseTextBox);
             this.DepartmentPanel.Controls.Add(this.label31);
@@ -224,18 +280,85 @@
             this.DepartmentPanel.Controls.Add(this.label28);
             this.DepartmentPanel.Controls.Add(this.label29);
             this.DepartmentPanel.Controls.Add(this.label30);
-            this.DepartmentPanel.Controls.Add(this.SectionsTextBox);
-            this.DepartmentPanel.Location = new System.Drawing.Point(9, 96);
+            this.DepartmentPanel.Location = new System.Drawing.Point(16, 89);
             this.DepartmentPanel.Name = "DepartmentPanel";
             this.DepartmentPanel.Size = new System.Drawing.Size(752, 374);
             this.DepartmentPanel.TabIndex = 38;
+            // 
+            // label48
+            // 
+            this.label48.BackColor = System.Drawing.Color.Gold;
+            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label48.ForeColor = System.Drawing.Color.Gold;
+            this.label48.Location = new System.Drawing.Point(408, 115);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(260, 2);
+            this.label48.TabIndex = 77;
+            // 
+            // SectionsComboBox
+            // 
+            this.SectionsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SectionsComboBox.FormattingEnabled = true;
+            this.SectionsComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.SectionsComboBox.Location = new System.Drawing.Point(202, 39);
+            this.SectionsComboBox.Name = "SectionsComboBox";
+            this.SectionsComboBox.Size = new System.Drawing.Size(116, 21);
+            this.SectionsComboBox.TabIndex = 1;
+            // 
+            // SectionsNameTextBox
+            // 
+            this.SectionsNameTextBox.Location = new System.Drawing.Point(553, 23);
+            this.SectionsNameTextBox.Name = "SectionsNameTextBox";
+            this.SectionsNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SectionsNameTextBox.TabIndex = 7;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(422, 26);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(33, 13);
+            this.label47.TabIndex = 74;
+            this.label47.Text = "Smjer";
+            // 
+            // ClassComboBox
+            // 
+            this.ClassComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClassComboBox.FormattingEnabled = true;
+            this.ClassComboBox.Location = new System.Drawing.Point(579, 259);
+            this.ClassComboBox.Name = "ClassComboBox";
+            this.ClassComboBox.Size = new System.Drawing.Size(100, 21);
+            this.ClassComboBox.TabIndex = 10;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(422, 262);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 13);
+            this.label46.TabIndex = 72;
+            this.label46.Text = "Razred";
+            // 
+            // label45
+            // 
+            this.label45.BackColor = System.Drawing.Color.Gold;
+            this.label45.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label45.ForeColor = System.Drawing.Color.Gold;
+            this.label45.Location = new System.Drawing.Point(364, 40);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(2, 260);
+            this.label45.TabIndex = 71;
             // 
             // DepartmentNumberTextBox
             // 
             this.DepartmentNumberTextBox.Location = new System.Drawing.Point(218, 75);
             this.DepartmentNumberTextBox.Name = "DepartmentNumberTextBox";
             this.DepartmentNumberTextBox.Size = new System.Drawing.Size(100, 20);
-            this.DepartmentNumberTextBox.TabIndex = 41;
+            this.DepartmentNumberTextBox.TabIndex = 2;
             // 
             // label32
             // 
@@ -245,6 +368,120 @@
             this.label32.Size = new System.Drawing.Size(72, 13);
             this.label32.TabIndex = 40;
             this.label32.Text = "Broj odjeljenja";
+            // 
+            // CourseTextBox
+            // 
+            this.CourseTextBox.Location = new System.Drawing.Point(579, 215);
+            this.CourseTextBox.Name = "CourseTextBox";
+            this.CourseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CourseTextBox.TabIndex = 9;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(422, 218);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(82, 13);
+            this.label31.TabIndex = 32;
+            this.label31.Text = "Naziv Predmeta";
+            // 
+            // CoursesCheckedListBox
+            // 
+            this.CoursesCheckedListBox.FormattingEnabled = true;
+            this.CoursesCheckedListBox.Items.AddRange(new object[] {
+            "1- Matematika",
+            "2- Srpski",
+            "3-Fizika",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.CoursesCheckedListBox.Location = new System.Drawing.Point(160, 202);
+            this.CoursesCheckedListBox.Name = "CoursesCheckedListBox";
+            this.CoursesCheckedListBox.Size = new System.Drawing.Size(170, 109);
+            this.CoursesCheckedListBox.TabIndex = 5;
+            // 
+            // ClassTeacherComboBox
+            // 
+            this.ClassTeacherComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClassTeacherComboBox.FormattingEnabled = true;
+            this.ClassTeacherComboBox.Location = new System.Drawing.Point(216, 155);
+            this.ClassTeacherComboBox.Name = "ClassTeacherComboBox";
+            this.ClassTeacherComboBox.Size = new System.Drawing.Size(100, 21);
+            this.ClassTeacherComboBox.TabIndex = 4;
+            // 
+            // ClassNumberComboBox
+            // 
+            this.ClassNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ClassNumberComboBox.FormattingEnabled = true;
+            this.ClassNumberComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.ClassNumberComboBox.Location = new System.Drawing.Point(216, 113);
+            this.ClassNumberComboBox.Name = "ClassNumberComboBox";
+            this.ClassNumberComboBox.Size = new System.Drawing.Size(100, 21);
+            this.ClassNumberComboBox.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 39);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Smjer";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 116);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(41, 13);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "Razred";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(16, 157);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(100, 13);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "Razredni Nastavnik";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(14, 202);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(48, 13);
+            this.label30.TabIndex = 26;
+            this.label30.Text = "Predmeti";
             // 
             // StudentPanel
             // 
@@ -278,10 +515,55 @@
             this.StudentPanel.Controls.Add(this.StudentSurnameTextBox);
             this.StudentPanel.Controls.Add(this.label8);
             this.StudentPanel.Controls.Add(this.StudentNameTextBox);
-            this.StudentPanel.Location = new System.Drawing.Point(9, 89);
+            this.StudentPanel.Location = new System.Drawing.Point(7, 90);
             this.StudentPanel.Name = "StudentPanel";
             this.StudentPanel.Size = new System.Drawing.Size(738, 326);
             this.StudentPanel.TabIndex = 40;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(548, 37);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(11, 13);
+            this.label42.TabIndex = 79;
+            this.label42.Text = "*";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(548, 78);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(11, 13);
+            this.label44.TabIndex = 78;
+            this.label44.Text = "*";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(194, 33);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(11, 13);
+            this.label43.TabIndex = 76;
+            this.label43.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(194, 74);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(11, 13);
+            this.label26.TabIndex = 74;
+            this.label26.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(194, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(11, 13);
+            this.label25.TabIndex = 73;
+            this.label25.Text = "*";
             // 
             // label40
             // 
@@ -324,7 +606,7 @@
             this.ParentPhoneTextBox.Location = new System.Drawing.Point(565, 221);
             this.ParentPhoneTextBox.Name = "ParentPhoneTextBox";
             this.ParentPhoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ParentPhoneTextBox.TabIndex = 52;
+            this.ParentPhoneTextBox.TabIndex = 12;
             // 
             // label35
             // 
@@ -340,7 +622,7 @@
             this.ParentAddressTextBox.Location = new System.Drawing.Point(565, 171);
             this.ParentAddressTextBox.Name = "ParentAddressTextBox";
             this.ParentAddressTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ParentAddressTextBox.TabIndex = 50;
+            this.ParentAddressTextBox.TabIndex = 11;
             // 
             // label36
             // 
@@ -356,7 +638,7 @@
             this.ParentEmailTextBox.Location = new System.Drawing.Point(565, 122);
             this.ParentEmailTextBox.Name = "ParentEmailTextBox";
             this.ParentEmailTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ParentEmailTextBox.TabIndex = 49;
+            this.ParentEmailTextBox.TabIndex = 10;
             // 
             // label37
             // 
@@ -372,14 +654,14 @@
             this.ParentSurnameTextBox.Location = new System.Drawing.Point(565, 74);
             this.ParentSurnameTextBox.Name = "ParentSurnameTextBox";
             this.ParentSurnameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ParentSurnameTextBox.TabIndex = 47;
+            this.ParentSurnameTextBox.TabIndex = 9;
             // 
             // ParentNameTextBox
             // 
             this.ParentNameTextBox.Location = new System.Drawing.Point(565, 33);
             this.ParentNameTextBox.Name = "ParentNameTextBox";
             this.ParentNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ParentNameTextBox.TabIndex = 45;
+            this.ParentNameTextBox.TabIndex = 8;
             // 
             // DepartmentComboBox
             // 
@@ -393,7 +675,7 @@
             this.DepartmentComboBox.Location = new System.Drawing.Point(213, 259);
             this.DepartmentComboBox.Name = "DepartmentComboBox";
             this.DepartmentComboBox.Size = new System.Drawing.Size(100, 21);
-            this.DepartmentComboBox.TabIndex = 43;
+            this.DepartmentComboBox.TabIndex = 7;
             // 
             // label3
             // 
@@ -484,160 +766,19 @@
             this.StudentNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.StudentNameTextBox.TabIndex = 2;
             // 
-            // CourseTextBox
-            // 
-            this.CourseTextBox.Location = new System.Drawing.Point(572, 82);
-            this.CourseTextBox.Name = "CourseTextBox";
-            this.CourseTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CourseTextBox.TabIndex = 37;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(415, 85);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(82, 13);
-            this.label31.TabIndex = 32;
-            this.label31.Text = "Naziv Predmeta";
-            // 
-            // CoursesCheckedListBox
-            // 
-            this.CoursesCheckedListBox.FormattingEnabled = true;
-            this.CoursesCheckedListBox.Items.AddRange(new object[] {
-            "1- Matematika",
-            "2- Srpski",
-            "3-Fizika",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.CoursesCheckedListBox.Location = new System.Drawing.Point(160, 202);
-            this.CoursesCheckedListBox.Name = "CoursesCheckedListBox";
-            this.CoursesCheckedListBox.Size = new System.Drawing.Size(170, 109);
-            this.CoursesCheckedListBox.TabIndex = 30;
-            // 
-            // ClassTeacherComboBox
-            // 
-            this.ClassTeacherComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ClassTeacherComboBox.FormattingEnabled = true;
-            this.ClassTeacherComboBox.Location = new System.Drawing.Point(216, 155);
-            this.ClassTeacherComboBox.Name = "ClassTeacherComboBox";
-            this.ClassTeacherComboBox.Size = new System.Drawing.Size(100, 21);
-            this.ClassTeacherComboBox.TabIndex = 29;
-            // 
-            // ClassNumberComboBox
-            // 
-            this.ClassNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ClassNumberComboBox.FormattingEnabled = true;
-            this.ClassNumberComboBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.ClassNumberComboBox.Location = new System.Drawing.Point(216, 113);
-            this.ClassNumberComboBox.Name = "ClassNumberComboBox";
-            this.ClassNumberComboBox.Size = new System.Drawing.Size(100, 21);
-            this.ClassNumberComboBox.TabIndex = 28;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 39);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Smjer";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(16, 116);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(41, 13);
-            this.label28.TabIndex = 24;
-            this.label28.Text = "Razred";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(16, 157);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(100, 13);
-            this.label29.TabIndex = 25;
-            this.label29.Text = "Razredni Nastavnik";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(14, 202);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(48, 13);
-            this.label30.TabIndex = 26;
-            this.label30.Text = "Predmeti";
-            // 
-            // SectionsTextBox
-            // 
-            this.SectionsTextBox.Location = new System.Drawing.Point(218, 39);
-            this.SectionsTextBox.Name = "SectionsTextBox";
-            this.SectionsTextBox.Size = new System.Drawing.Size(100, 20);
-            this.SectionsTextBox.TabIndex = 18;
-            // 
-            // ConfirmedNewPassTextBox
-            // 
-            this.ConfirmedNewPassTextBox.Location = new System.Drawing.Point(443, 214);
-            this.ConfirmedNewPassTextBox.Name = "ConfirmedNewPassTextBox";
-            this.ConfirmedNewPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.ConfirmedNewPassTextBox.TabIndex = 28;
-            // 
-            // NewPassTextBox
-            // 
-            this.NewPassTextBox.Location = new System.Drawing.Point(443, 166);
-            this.NewPassTextBox.Name = "NewPassTextBox";
-            this.NewPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.NewPassTextBox.TabIndex = 27;
-            // 
-            // OldPassTextBox
-            // 
-            this.OldPassTextBox.Location = new System.Drawing.Point(443, 125);
-            this.OldPassTextBox.Name = "OldPassTextBox";
-            this.OldPassTextBox.Size = new System.Drawing.Size(130, 20);
-            this.OldPassTextBox.TabIndex = 26;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(276, 58);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Promijenite lozinku";
-            // 
             // AdministratorPanel
             // 
+            this.AdministratorPanel.Controls.Add(this.label55);
+            this.AdministratorPanel.Controls.Add(this.label49);
+            this.AdministratorPanel.Controls.Add(this.label50);
+            this.AdministratorPanel.Controls.Add(this.label51);
+            this.AdministratorPanel.Controls.Add(this.label52);
+            this.AdministratorPanel.Controls.Add(this.DirectorUserNameTextBox);
+            this.AdministratorPanel.Controls.Add(this.AddDirectorButton);
+            this.AdministratorPanel.Controls.Add(this.label53);
+            this.AdministratorPanel.Controls.Add(this.label54);
+            this.AdministratorPanel.Controls.Add(this.DirectorSurnameTextBox);
+            this.AdministratorPanel.Controls.Add(this.DirectorNameTextBox);
             this.AdministratorPanel.Controls.Add(this.label24);
             this.AdministratorPanel.Controls.Add(this.label23);
             this.AdministratorPanel.Controls.Add(this.label22);
@@ -650,8 +791,93 @@
             this.AdministratorPanel.Controls.Add(this.AdminNameTextBox);
             this.AdministratorPanel.Location = new System.Drawing.Point(16, 93);
             this.AdministratorPanel.Name = "AdministratorPanel";
-            this.AdministratorPanel.Size = new System.Drawing.Size(504, 329);
+            this.AdministratorPanel.Size = new System.Drawing.Size(679, 329);
             this.AdministratorPanel.TabIndex = 36;
+            // 
+            // label55
+            // 
+            this.label55.BackColor = System.Drawing.Color.Gold;
+            this.label55.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label55.ForeColor = System.Drawing.Color.Gold;
+            this.label55.Location = new System.Drawing.Point(348, 32);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(2, 260);
+            this.label55.TabIndex = 72;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(543, 77);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(11, 13);
+            this.label49.TabIndex = 50;
+            this.label49.Text = "*";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(543, 111);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(11, 13);
+            this.label50.TabIndex = 49;
+            this.label50.Text = "*";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(543, 36);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(11, 13);
+            this.label51.TabIndex = 48;
+            this.label51.Text = "*";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(371, 118);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(76, 13);
+            this.label52.TabIndex = 47;
+            this.label52.Text = "Korisničko Ime";
+            // 
+            // DirectorUserNameTextBox
+            // 
+            this.DirectorUserNameTextBox.Location = new System.Drawing.Point(569, 111);
+            this.DirectorUserNameTextBox.Name = "DirectorUserNameTextBox";
+            this.DirectorUserNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DirectorUserNameTextBox.TabIndex = 8;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(372, 33);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(24, 13);
+            this.label53.TabIndex = 44;
+            this.label53.Text = "Ime";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(372, 74);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(44, 13);
+            this.label54.TabIndex = 45;
+            this.label54.Text = "Prezime";
+            // 
+            // DirectorSurnameTextBox
+            // 
+            this.DirectorSurnameTextBox.Location = new System.Drawing.Point(569, 74);
+            this.DirectorSurnameTextBox.Name = "DirectorSurnameTextBox";
+            this.DirectorSurnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DirectorSurnameTextBox.TabIndex = 7;
+            // 
+            // DirectorNameTextBox
+            // 
+            this.DirectorNameTextBox.Location = new System.Drawing.Point(569, 33);
+            this.DirectorNameTextBox.Name = "DirectorNameTextBox";
+            this.DirectorNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DirectorNameTextBox.TabIndex = 6;
             // 
             // label24
             // 
@@ -728,6 +954,24 @@
             this.AdminNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.AdminNameTextBox.TabIndex = 2;
             // 
+            // warLabel
+            // 
+            this.warLabel.AutoSize = true;
+            this.warLabel.Location = new System.Drawing.Point(621, 470);
+            this.warLabel.Name = "warLabel";
+            this.warLabel.Size = new System.Drawing.Size(11, 13);
+            this.warLabel.TabIndex = 72;
+            this.warLabel.Text = "*";
+            // 
+            // WarLabel1
+            // 
+            this.WarLabel1.AutoSize = true;
+            this.WarLabel1.Location = new System.Drawing.Point(638, 470);
+            this.WarLabel1.Name = "WarLabel1";
+            this.WarLabel1.Size = new System.Drawing.Size(94, 13);
+            this.WarLabel1.TabIndex = 73;
+            this.WarLabel1.Text = "Polja su obavezna";
+            // 
             // TeachersPanel
             // 
             this.TeachersPanel.AutoSize = true;
@@ -745,10 +989,10 @@
             this.TeachersPanel.Controls.Add(this.TeacherAddressTextBox);
             this.TeachersPanel.Controls.Add(this.TeacherSurnameTextBox);
             this.TeachersPanel.Controls.Add(this.TeacherNameTextBox);
-            this.TeachersPanel.Location = new System.Drawing.Point(3, 96);
+            this.TeachersPanel.Location = new System.Drawing.Point(7, 89);
             this.TeachersPanel.Name = "TeachersPanel";
             this.TeachersPanel.Size = new System.Drawing.Size(761, 380);
-            this.TeachersPanel.TabIndex = 42;
+            this.TeachersPanel.TabIndex = 74;
             // 
             // label21
             // 
@@ -858,23 +1102,65 @@
             this.TeacherNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.TeacherNameTextBox.TabIndex = 2;
             // 
-            // warLabel
+            // AddSectionsButton
             // 
-            this.warLabel.AutoSize = true;
-            this.warLabel.Location = new System.Drawing.Point(621, 470);
-            this.warLabel.Name = "warLabel";
-            this.warLabel.Size = new System.Drawing.Size(11, 13);
-            this.warLabel.TabIndex = 72;
-            this.warLabel.Text = "*";
+            this.AddSectionsButton.Location = new System.Drawing.Point(553, 68);
+            this.AddSectionsButton.Name = "AddSectionsButton";
+            this.AddSectionsButton.Size = new System.Drawing.Size(100, 23);
+            this.AddSectionsButton.TabIndex = 8;
+            this.AddSectionsButton.Text = "Dodajte smjer";
+            this.AddSectionsButton.UseVisualStyleBackColor = true;
+            this.AddSectionsButton.Click += new System.EventHandler(this.AddSectionsButton_Click);
             // 
-            // WarLabel1
+            // AddDepartmentAndClassTeacherButton
             // 
-            this.WarLabel1.AutoSize = true;
-            this.WarLabel1.Location = new System.Drawing.Point(638, 470);
-            this.WarLabel1.Name = "WarLabel1";
-            this.WarLabel1.Size = new System.Drawing.Size(94, 13);
-            this.WarLabel1.TabIndex = 73;
-            this.WarLabel1.Text = "Polja su obavezna";
+            this.AddDepartmentAndClassTeacherButton.Location = new System.Drawing.Point(94, 332);
+            this.AddDepartmentAndClassTeacherButton.Name = "AddDepartmentAndClassTeacherButton";
+            this.AddDepartmentAndClassTeacherButton.Size = new System.Drawing.Size(224, 23);
+            this.AddDepartmentAndClassTeacherButton.TabIndex = 6;
+            this.AddDepartmentAndClassTeacherButton.Text = "Dodajte odjeljenje i razrednog nastavnika";
+            this.AddDepartmentAndClassTeacherButton.UseVisualStyleBackColor = true;
+            this.AddDepartmentAndClassTeacherButton.Click += new System.EventHandler(this.AddDepartmentAndClassTeacherButton_Click);
+            // 
+            // AddCourseButton
+            // 
+            this.AddCourseButton.Location = new System.Drawing.Point(582, 329);
+            this.AddCourseButton.Name = "AddCourseButton";
+            this.AddCourseButton.Size = new System.Drawing.Size(100, 23);
+            this.AddCourseButton.TabIndex = 11;
+            this.AddCourseButton.Text = "Dodajte predmet";
+            this.AddCourseButton.UseVisualStyleBackColor = true;
+            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
+            // 
+            // AddStudentButton
+            // 
+            this.AddStudentButton.Location = new System.Drawing.Point(444, 267);
+            this.AddStudentButton.Name = "AddStudentButton";
+            this.AddStudentButton.Size = new System.Drawing.Size(100, 23);
+            this.AddStudentButton.TabIndex = 13;
+            this.AddStudentButton.Text = "Potvrdite";
+            this.AddStudentButton.UseVisualStyleBackColor = true;
+            this.AddStudentButton.Click += new System.EventHandler(this.AddStudentButton_Click);
+            // 
+            // AddDirectorButton
+            // 
+            this.AddDirectorButton.Location = new System.Drawing.Point(569, 163);
+            this.AddDirectorButton.Name = "AddDirectorButton";
+            this.AddDirectorButton.Size = new System.Drawing.Size(100, 23);
+            this.AddDirectorButton.TabIndex = 9;
+            this.AddDirectorButton.Text = "Dodajte Direktora";
+            this.AddDirectorButton.UseVisualStyleBackColor = true;
+            this.AddDirectorButton.Click += new System.EventHandler(this.AddDirectorButton_Click);
+            // 
+            // AddAdminButton
+            // 
+            this.AddAdminButton.Location = new System.Drawing.Point(213, 163);
+            this.AddAdminButton.Name = "AddAdminButton";
+            this.AddAdminButton.Size = new System.Drawing.Size(100, 23);
+            this.AddAdminButton.TabIndex = 5;
+            this.AddAdminButton.Text = "Dodajte administratora";
+            this.AddAdminButton.UseVisualStyleBackColor = true;
+            this.AddAdminButton.Click += new System.EventHandler(this.AddAdminButton_Click);
             // 
             // AddTeacherButton
             // 
@@ -895,46 +1181,6 @@
             this.ChangePassAdminButton.Text = "Potvrdite promjenu";
             this.ChangePassAdminButton.UseVisualStyleBackColor = true;
             this.ChangePassAdminButton.Click += new System.EventHandler(this.ChangePassAdminButton_Click);
-            // 
-            // AddDepartmentAndClassTeacherButton
-            // 
-            this.AddDepartmentAndClassTeacherButton.Location = new System.Drawing.Point(94, 332);
-            this.AddDepartmentAndClassTeacherButton.Name = "AddDepartmentAndClassTeacherButton";
-            this.AddDepartmentAndClassTeacherButton.Size = new System.Drawing.Size(224, 23);
-            this.AddDepartmentAndClassTeacherButton.TabIndex = 42;
-            this.AddDepartmentAndClassTeacherButton.Text = "Dodajte odjeljenje i razrednog nastavnika";
-            this.AddDepartmentAndClassTeacherButton.UseVisualStyleBackColor = true;
-            this.AddDepartmentAndClassTeacherButton.Click += new System.EventHandler(this.AddDepartmentAndClassTeacherButton_Click);
-            // 
-            // AddCourseButton
-            // 
-            this.AddCourseButton.Location = new System.Drawing.Point(572, 137);
-            this.AddCourseButton.Name = "AddCourseButton";
-            this.AddCourseButton.Size = new System.Drawing.Size(100, 23);
-            this.AddCourseButton.TabIndex = 38;
-            this.AddCourseButton.Text = "Dodajte predmet";
-            this.AddCourseButton.UseVisualStyleBackColor = true;
-            this.AddCourseButton.Click += new System.EventHandler(this.AddCourseButton_Click);
-            // 
-            // AddStudentButton
-            // 
-            this.AddStudentButton.Location = new System.Drawing.Point(444, 267);
-            this.AddStudentButton.Name = "AddStudentButton";
-            this.AddStudentButton.Size = new System.Drawing.Size(100, 23);
-            this.AddStudentButton.TabIndex = 36;
-            this.AddStudentButton.Text = "Potvrdite";
-            this.AddStudentButton.UseVisualStyleBackColor = true;
-            this.AddStudentButton.Click += new System.EventHandler(this.AddStudentButton_Click);
-            // 
-            // AddAdminButton
-            // 
-            this.AddAdminButton.Location = new System.Drawing.Point(213, 163);
-            this.AddAdminButton.Name = "AddAdminButton";
-            this.AddAdminButton.Size = new System.Drawing.Size(100, 23);
-            this.AddAdminButton.TabIndex = 35;
-            this.AddAdminButton.Text = "Potvrdite";
-            this.AddAdminButton.UseVisualStyleBackColor = true;
-            this.AddAdminButton.Click += new System.EventHandler(this.AddAdminButton_Click);
             // 
             // ControlTableButton
             // 
@@ -966,61 +1212,17 @@
             this.LogOutUserButton.UseVisualStyleBackColor = true;
             this.LogOutUserButton.Click += new System.EventHandler(this.LogOutUserButton_Click);
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(194, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(11, 13);
-            this.label25.TabIndex = 73;
-            this.label25.Text = "*";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(194, 74);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(11, 13);
-            this.label26.TabIndex = 74;
-            this.label26.Text = "*";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(194, 33);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(11, 13);
-            this.label43.TabIndex = 76;
-            this.label43.Text = "*";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(548, 37);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(11, 13);
-            this.label42.TabIndex = 79;
-            this.label42.Text = "*";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(548, 78);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(11, 13);
-            this.label44.TabIndex = 78;
-            this.label44.Text = "*";
-            // 
             // AdministrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(773, 498);
-            this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.DepartmentPanel);
-            this.Controls.Add(this.PasswordPanel);
+            this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.AdministratorPanel);
+            this.Controls.Add(this.TeachersPanel);
+            this.Controls.Add(this.PasswordPanel);
             this.Controls.Add(this.WarLabel1);
             this.Controls.Add(this.warLabel);
             this.Controls.Add(this.ControlTableButton);
@@ -1081,15 +1283,6 @@
         private System.Windows.Forms.TextBox StudentSurnameTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox StudentNameTextBox;
-        private System.Windows.Forms.Panel TeachersPanel;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox TeacherPhoneTextBox;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox TeacherAddressTextBox;
-        private System.Windows.Forms.TextBox TeacherSurnameTextBox;
-        private System.Windows.Forms.TextBox TeacherNameTextBox;
         private System.Windows.Forms.Panel DepartmentPanel;
         private System.Windows.Forms.CheckedListBox CoursesCheckedListBox;
         private System.Windows.Forms.ComboBox ClassTeacherComboBox;
@@ -1098,10 +1291,8 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox SectionsTextBox;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox CourseTextBox;
-        private System.Windows.Forms.TextBox DepartmentNumberTextBox;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label39;
@@ -1121,7 +1312,6 @@
         private RoundedButton ChangePassAdminButton;
         private RoundedButton AddAdminButton;
         private RoundedButton AddStudentButton;
-        private RoundedButton AddTeacherButton;
         private RoundedButton AddCourseButton;
         private RoundedButton AddDepartmentAndClassTeacherButton;
         private RoundedButton ControlTableButton;
@@ -1130,17 +1320,47 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label warLabel;
         private System.Windows.Forms.Label WarLabel1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox TeacherUserNameTextBox;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel TeachersPanel;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox TeacherUserNameTextBox;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label27;
+        private RoundedButton AddTeacherButton;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox TeacherPhoneTextBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox TeacherAddressTextBox;
+        private System.Windows.Forms.TextBox TeacherSurnameTextBox;
+        private System.Windows.Forms.TextBox TeacherNameTextBox;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox DepartmentNumberTextBox;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.ComboBox SectionsComboBox;
+        private RoundedButton AddSectionsButton;
+        private System.Windows.Forms.TextBox SectionsNameTextBox;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.ComboBox ClassComboBox;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox DirectorUserNameTextBox;
+        private RoundedButton AddDirectorButton;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox DirectorSurnameTextBox;
+        private System.Windows.Forms.TextBox DirectorNameTextBox;
+        private System.Windows.Forms.Label label55;
     }
 }

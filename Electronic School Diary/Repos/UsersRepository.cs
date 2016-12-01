@@ -70,6 +70,30 @@ namespace ElectronicSchoolDiary.Repos
                 MessageBox.Show(ex.Message);
             }
         }
+        public static bool CheckUnique(string UserName)
+        {
+            bool flag = false;
+            try
+            {
+
+                SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Users 
+                    WHERE @usname = UserName", Connection);
+                command.Parameters.AddWithValue("@usname", UserName);
+                SqlCeDataReader reader = command.ExecuteReader();
+                if (reader.Read() && (int)reader["Id"] > 0)
+                {
+                    flag = true;
+                    MessageBox.Show("Korisničko ime  " + "'" + UserName + "'" + "  već postoji !");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+                MessageBox.Show(ex.Message);
+            }
+            return flag;
+        }
 
     }
 }

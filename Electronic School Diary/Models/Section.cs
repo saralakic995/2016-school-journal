@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace ElectronicSchoolDiary.Models
 {
-    class Section
+   public  class Section
     {
-        public int Id { get; set; }
         public string Description { get; set; }
-       
 
-
-        public Section(int id, string description)
+        public Section( string description)
         {
-            Id = id;
             Description = description;
         }
     }

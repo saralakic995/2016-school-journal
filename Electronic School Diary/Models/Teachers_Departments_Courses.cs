@@ -12,10 +12,7 @@ namespace ElectronicSchoolDiary.Models
         public int TeachersId { get; set; }
         public int DepartmentsId { get; set; }
         public int CoursesId { get; set; }
-
-
-
-
+        
         public Teachers_Departments_Courses(int id, int teachersId, int departmentsId, int coursesId)
         {
             Id = id;

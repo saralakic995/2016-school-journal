@@ -8,24 +8,29 @@ namespace ElectronicSchoolDiary.Models
 {
     class Student
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Jmbg { get; set; }
         public string Address { get; set; }
         public string Phone_number { get; set; }
-        public int DepartmentsId { get; set; }
 
 
-        public Student(int id, string name, string surname, int jmbg, string address, string phone_number, int departmentsId)
+        public Student(string name, string surname, int jmbg, string address, string phone_number)
         {
-            Id = id;
-            Name = name;
-            Surname = surname;
-            Jmbg = jmbg;
-            Address = address;
-            Phone_number = phone_number;
-            DepartmentsId = departmentsId;
+            if (jmbg == 13)
+            {
+                if (phone_number != "" || phone_number.Length == 9)
+                {
+                    Name = name;
+                    Surname = surname;
+                    Jmbg = jmbg;
+                    Address = address;
+                    Phone_number = phone_number;
+                }
+                else throw new Exception("Unesite 9 brojeva za telefon.");
+            }
+            else if( jmbg != 13)
+                throw new Exception("Jedinstveni matični broj se sastoji od 13 brojeva.");
         }
     }
 }

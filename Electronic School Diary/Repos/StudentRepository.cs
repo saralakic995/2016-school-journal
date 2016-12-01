@@ -11,29 +11,31 @@ namespace ElectronicSchoolDiary.Repos
 {
     class StudentRepository
     {
-        public static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
-
+        private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+ 
         public static bool AddStudent(string StudentName, string StudentSurname, string Jmbg, string Address, string Phone_number)
         {
             bool flag = false;
 
             try
             {
-                SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Students (Name,Surname,Jmbg,Address,Phone_number,DepartmentsId)
+              
+                    SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Students (Name,Surname,Jmbg,Address,Phone_number,DepartmentsId)
                     VALUES (@name, @surname, @jmbg, @address, @phone, @depId)", Connection);
-                command.Parameters.AddWithValue("@name", StudentName);
-                command.Parameters.AddWithValue("@surname", StudentSurname);
-                command.Parameters.AddWithValue("@jmbg", Jmbg);
-                command.Parameters.AddWithValue("@address", Address);
-                command.Parameters.AddWithValue("@phone", Phone_number);
-                command.Parameters.AddWithValue("@depId", 1);
+                    command.Parameters.AddWithValue("@name", StudentName);
+                    command.Parameters.AddWithValue("@surname", StudentSurname);
+                    command.Parameters.AddWithValue("@jmbg", Jmbg);
+                    command.Parameters.AddWithValue("@address", Address);
+                    command.Parameters.AddWithValue("@phone", Phone_number);
+                    command.Parameters.AddWithValue("@depId", 5);
 
-                int result = command.ExecuteNonQuery();
-                if (result > 0)
-                {
-                    flag = true;
-                    MessageBox.Show("Učenik je uspješno dodat !");
-                }
+                    int result = command.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        flag = true;
+                        MessageBox.Show("Učenik je uspješno dodat !");
+                    }
+                
             }
             catch (Exception ex)
             {

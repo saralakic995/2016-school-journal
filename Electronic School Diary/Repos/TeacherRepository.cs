@@ -13,12 +13,19 @@ namespace ElectronicSchoolDiary.Repos
     {
         private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
+        public static string GetQuery()
+        {
+            string query;
+            query = @"SELECT Name,Surname FROM Classes";
+            return query;
+
+        }
         public static bool AddTeacher(string TeacherName, string TeacherSurname, string TeacherUserName, string Address, string Phone_number,string Password)
         {
             bool flag = false;
             try
             {
-              UsersRepository.InsertUser(TeacherUserName, Password);
+                    UsersRepository.InsertUser(TeacherUserName, Password);
                     int TeacherId = UsersRepository.GetIdByName(TeacherUserName, Password);
 
                     SqlCeCommand command1 = new SqlCeCommand(@"INSERT INTO Teachers (Name,Surname,Address,Phone_number,UsersId)
