@@ -55,5 +55,19 @@ namespace ElectronicSchoolDiary.Repos
             }
             return flag;
         }
+        public static int GetIdByName(string name, string surname)
+        {
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Teachers WHERE Name = @name AND Surname = @surname ", Connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@surname", surname);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
     }
 }

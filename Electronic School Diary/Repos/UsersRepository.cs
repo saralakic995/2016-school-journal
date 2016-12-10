@@ -62,6 +62,7 @@ namespace ElectronicSchoolDiary.Repos
                     int result = command.ExecuteNonQuery();
                     if (result > 0)
                     {
+                    command.Dispose();
                         MessageBox.Show("Podaci za logovanje su uspješno dodati !");
                     }
                 
@@ -76,7 +77,6 @@ namespace ElectronicSchoolDiary.Repos
             bool flag = false;
             try
             {
-
                 SqlCeCommand command = new SqlCeCommand(@"SELECT UserName FROM Users 
                     WHERE @usname = UserName", Connection);
                 command.Parameters.AddWithValue("@usname", UserName);

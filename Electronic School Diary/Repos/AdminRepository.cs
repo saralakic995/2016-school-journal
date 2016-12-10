@@ -30,7 +30,8 @@ namespace ElectronicSchoolDiary.Repos
                     int result = command.ExecuteNonQuery();
                     if (result > 0)
                     {
-                        flag = true;
+                    command.Dispose();
+                    flag = true;
                         MessageBox.Show("Administrator je uspješno dodat !");
                     }
             }
