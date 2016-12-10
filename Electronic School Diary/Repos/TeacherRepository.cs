@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,12 +14,17 @@ namespace ElectronicSchoolDiary.Repos
     {
         private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-        public static string GetQuery()
+        public static string GetNameQuery()
         {
             string query;
-            query = @"SELECT Name,Surname FROM Classes";
+            query = @"SELECT Name FROM Teachers";
             return query;
-
+        }
+        public static string GetSurnameQuery()
+        {
+            string query;
+            query = @"SELECT Surname FROM Teachers";
+            return query;
         }
         public static bool AddTeacher(string TeacherName, string TeacherSurname, string TeacherUserName, string Address, string Phone_number,string Password)
         {
@@ -26,7 +32,7 @@ namespace ElectronicSchoolDiary.Repos
             try
             {
                     UsersRepository.InsertUser(TeacherUserName, Password);
-                    int TeacherId = UsersRepository.GetIdByName(TeacherUserName, Password);
+                    int TeacherId = UsersRepository.GetIdByName(TeacherUserName);
 
                     SqlCeCommand command1 = new SqlCeCommand(@"INSERT INTO Teachers (Name,Surname,Address,Phone_number,UsersId)
                     VALUES (@name, @surname, @address, @phonenumber, @usersId)", Connection);

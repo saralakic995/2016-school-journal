@@ -39,6 +39,7 @@ namespace ElectronicSchoolDiary
             PopulateSectionsComboBox();
             PopulateClassNumberComboBox();
             PopulateClassNumbComboBox();
+            PopulateTeachersComboBox();
         }
 
         private void PopulateDepartmentsComboBox()
@@ -69,8 +70,9 @@ namespace ElectronicSchoolDiary
         }
         private void PopulateTeachersComboBox()
         {
-            string TeacherQuery1 = TeacherRepository.GetQuery();
-            Lists.FillDropDownList2(TeacherQuery1,"Name", TeacherQuery1,"Surname", DepartmentComboBox);
+            string Name = TeacherRepository.GetNameQuery();
+            string Surname = TeacherRepository.GetSurnameQuery();
+            Lists.FillDropDownList2(Name, "Name", Surname, "Surname", ClassTeacherComboBox);
         }
 
         private string selectedUser()
@@ -164,10 +166,10 @@ namespace ElectronicSchoolDiary
             }
             else
             {
-                bool isUnique = UsersRepository.CheckUnique(AdminNameTextBox.Text);
+                bool isUnique = UsersRepository.CheckUnique(UserNameTextBox.Text);
                 if(isUnique != true)
                 {
-                    bool isAdminAdded = AdminRepository.AddAdmin(AdminNameTextBox.Text, AdminSurnameTextBox.Text, UserNameTextBox.Text, AdminNameTextBox.Text + AdminSurnameTextBox.Text);
+                    bool isAdminAdded = AdminRepository.AddAdmin(AdminNameTextBox.Text, AdminSurnameTextBox.Text, UserNameTextBox.Text, AdminNameTextBox.Text );
                     if (isAdminAdded == true)
                     {
                         AdminNameTextBox.Text = "";
@@ -211,10 +213,10 @@ namespace ElectronicSchoolDiary
             }
             else
             {
-                bool isUnique = UsersRepository.CheckUnique(DirectorNameTextBox.Text);
+                bool isUnique = UsersRepository.CheckUnique(DirectorUserNameTextBox.Text);
                 if (isUnique != true)
                 {
-                    bool isDirectorAdded = DirectorRepository.AddDirector(DirectorNameTextBox.Text, DirectorSurnameTextBox.Text, DirectorUserNameTextBox.Text, DirectorNameTextBox.Text + DirectorSurnameTextBox.Text);
+                    bool isDirectorAdded = DirectorRepository.AddDirector(DirectorNameTextBox.Text, DirectorSurnameTextBox.Text, DirectorUserNameTextBox.Text, DirectorNameTextBox.Text);
                     if (isDirectorAdded == true)
                     {
                         DirectorNameTextBox.Text = "";
@@ -228,6 +230,7 @@ namespace ElectronicSchoolDiary
                         DirectorUserNameTextBox.Text = "";
                     }
                 }
+               
             }
         }
 
@@ -351,7 +354,7 @@ namespace ElectronicSchoolDiary
                 bool isUnique = UsersRepository.CheckUnique(TeacherUserNameTextBox.Text);
                 if (isUnique != true)
                 {
-                    bool isTeacherAdded = TeacherRepository.AddTeacher(TeacherNameTextBox.Text, TeacherSurnameTextBox.Text, TeacherUserNameTextBox.Text, TeacherAddressTextBox.Text, TeacherPhoneTextBox.Text, TeacherNameTextBox.Text + TeacherSurnameTextBox.Text);
+                    bool isTeacherAdded = TeacherRepository.AddTeacher(TeacherNameTextBox.Text, TeacherSurnameTextBox.Text, TeacherUserNameTextBox.Text, TeacherAddressTextBox.Text, TeacherPhoneTextBox.Text, TeacherNameTextBox.Text);
                     if (isTeacherAdded == true)
                     {
                         TeacherNameTextBox.Text = "";

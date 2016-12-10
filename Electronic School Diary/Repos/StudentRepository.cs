@@ -12,7 +12,19 @@ namespace ElectronicSchoolDiary.Repos
     class StudentRepository
     {
         private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
- 
+
+        public static string GetNameQuery()
+        {
+            string query;
+            query = @"SELECT Name FROM Students";
+            return query;
+        }
+        public static string GetSurnameQuery()
+        {
+            string query;
+            query = @"SELECT Surname FROM Students";
+            return query;
+        }
         public static bool AddStudent(string StudentName, string StudentSurname, string Jmbg, string Address, string Phone_number)
         {
             bool flag = false;
