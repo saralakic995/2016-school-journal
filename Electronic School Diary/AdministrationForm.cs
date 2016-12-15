@@ -39,7 +39,7 @@ namespace ElectronicSchoolDiary
             ClassNumberComboBox.SelectedIndex = 0;
             PopulateDepartmentsComboBox();
             PopulateClassNumberComboBox();
-            PopulateClassNumbComboBox();
+            PopulateClassNumbersComboBox();
             PopulateTeachersComboBox();
         }
 
@@ -61,10 +61,10 @@ namespace ElectronicSchoolDiary
             string ClassesQuery = ClassesRepository.GetQuery();
             Lists.FillDropDownList1(ClassesQuery,"Number", ClassNumberComboBox);
         }
-        private void PopulateClassNumbComboBox()
+        private void PopulateClassNumbersComboBox()
         {
             string ClassesQuery = ClassesRepository.GetQuery();
-            Lists.FillDropDownList1(ClassesQuery, "Number", ClassComboBox);
+            Lists.FillDropDownList1(ClassesQuery, "Number", ClassNumbersComboBox);
         }
      
 
@@ -336,6 +336,23 @@ namespace ElectronicSchoolDiary
             if(CourseTextBox.Text.Length == 0)
             {
                 Warning();
+            }
+            else
+            {
+                try
+                {
+                  
+                    bool isAdded =    CoursesRepository.AddCourse(CourseTextBox.Text, int.Parse(ClassNumbersComboBox.Text));
+                    if (isAdded == true)
+                    {
+                        CourseTextBox.Text = "";
+                    }
+                  
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Molimo unesite broj odjeljenja");
+                }
             }
         }
 

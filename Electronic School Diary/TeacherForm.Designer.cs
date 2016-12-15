@@ -213,8 +213,9 @@
             this.StudentsComboBox.FormattingEnabled = true;
             this.StudentsComboBox.Location = new System.Drawing.Point(116, 82);
             this.StudentsComboBox.Name = "StudentsComboBox";
-            this.StudentsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.StudentsComboBox.Size = new System.Drawing.Size(165, 21);
             this.StudentsComboBox.TabIndex = 13;
+            this.StudentsComboBox.SelectedIndexChanged += new System.EventHandler(this.StudentsComboBox_SelectedIndexChanged);
             // 
             // StudentPhoneLabel
             // 
@@ -558,11 +559,11 @@
             this.PasswordPanel.Controls.Add(this.NewPassTextBox);
             this.PasswordPanel.Controls.Add(this.OldPassTextBox);
             this.PasswordPanel.Controls.Add(this.label17);
-            this.PasswordPanel.Location = new System.Drawing.Point(69, 428);
+            this.PasswordPanel.Location = new System.Drawing.Point(781, 387);
             this.PasswordPanel.Name = "PasswordPanel";
             this.PasswordPanel.Size = new System.Drawing.Size(905, 405);
             this.PasswordPanel.TabIndex = 58;
-             // 
+            // 
             // CancelMeetingRoundedButton
             // 
             this.CancelMeetingRoundedButton.BackColor = System.Drawing.Color.Crimson;

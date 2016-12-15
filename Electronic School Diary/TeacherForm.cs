@@ -38,8 +38,8 @@ namespace ElectronicSchoolDiary
             ControlBox = false;
             TrueFalseAbsentComboBox.SelectedIndex = 1;
             AbsentHourComboBox.SelectedIndex = 0;
-            PopulateStudentsComboBox();
             PopulateCoursesComboBox();
+            PopulateStudentsComboBox();
         }
         private void PopulateStudentsComboBox()
         {
@@ -126,6 +126,11 @@ namespace ElectronicSchoolDiary
             {
                 MessageBox.Show("Polje ne moze biti prazno");
             }
+        }
+
+        private void StudentsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
