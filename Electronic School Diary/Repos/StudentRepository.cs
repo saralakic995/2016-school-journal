@@ -71,6 +71,19 @@ namespace ElectronicSchoolDiary.Repos
             return flag;
         }
 
+        public static int GetIdByNumber(int number)
+        {
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Students WHERE Id = @number", Connection);
+            command.Parameters.AddWithValue("@number", number);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
+
         public static int GetIdByJmbg(string jmbg)
         {
             SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Students WHERE Jmbg = @jmbg", Connection);
