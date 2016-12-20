@@ -8,33 +8,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using ElectronicSchoolDiary.Models;
+using ElectronicSchoolDiary.Repos;
 
 namespace ElectronicSchoolDiary
 {  
     public partial class TeacherForm : Form
     {
-        public TeacherForm()
-        {
-            InitializeComponent();
-        }
+        private User CurrentUser;
+        private Teacher CurrentTeacher;
 
         public void warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
         }
+
+        public TeacherForm(User user, Teacher teacher)
+        {
+            InitializeComponent();
+            this.Text = "Nastavnik : " + teacher.Name + " " + teacher.Surname;
+            CurrentUser = user;
+            CurrentTeacher = teacher;
+        }
+
+      
         private void TeacherForm_Load(object sender, EventArgs e)
         {
             PasswordPanel.Hide();
             ControlBox = false;
             TrueFalseAbsentComboBox.SelectedIndex = 1;
             AbsentHourComboBox.SelectedIndex = 0;
+            PopulateCoursesComboBox();
+            PopulateStudentsComboBox();
+        }
+        private void PopulateStudentsComboBox()
+        {
+            string Name = StudentRepository.GetNameQuery();
+            string Surname = StudentRepository.GetSurnameQuery();
+            Lists.FillDropDownList2(Name, "Name", Surname, "Surname", StudentsComboBox);
+        }
+        private void PopulateCoursesComboBox()
+        {
+            string Title = CoursesRepository.GetQuery();
+            Lists.FillDropDownList1(Title, "Title", CoursesComboBox);
         }
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            Form form = new LoginForm();
-            form.Show();
-            this.Hide();
+                Form form = new LoginForm();
+                form.Show();
+                this.Close();
         }
 
         private void UserSettingsButton_Click(object sender, EventArgs e)
@@ -70,10 +93,30 @@ namespace ElectronicSchoolDiary
         private void AddTeacherPasswordButton_Click(object sender, EventArgs e)
         {
             if (OldPassTextBox.Text.Length == 0 ||
-             NewPassTextBox.Text.Length == 0 ||
-             ConfirmedNewPassTextBox.Text.Length == 0)
+                 NewPassTextBox.Text.Length == 0 ||
+                 ConfirmedNewPassTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+                if (OldPassTextBox.Text == NewPassTextBox.Text)
+                {
+                    MessageBox.Show("Unesite novu lozinku koja se razlikuje od stare !");
+                }
+                else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
+                {
+                   bool isChanged = UsersRepository.ChangePassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                  if(isChanged == true)
+                    {
+                        PasswordPanel.Hide();
+                        UserSettingsButton.Hide();
+                    }
+                }
+                else if (NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
+                    MessageBox.Show("Nove lozinke se ne poklapaju !");
+                else MessageBox.Show("Pogrešna lozinka !");
+
             }
         }
 
@@ -83,6 +126,11 @@ namespace ElectronicSchoolDiary
             {
                 MessageBox.Show("Polje ne moze biti prazno");
             }
+        }
+
+        private void StudentsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

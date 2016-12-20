@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ElectronicSchoolDiary.Models;
+using ElectronicSchoolDiary.Repos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +14,22 @@ namespace ElectronicSchoolDiary
 {
     public partial class DirectorForm : Form
     {
-        public DirectorForm()
-        {
-            InitializeComponent();
-        }
+        private User CurrentUser;
+        private Director CurrentDirector;
 
         public void warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
         }
 
+        public DirectorForm(User user, Director director)
+        {
+            InitializeComponent();
+            this.Text = "Direktor : " + director.Name + " " + director.Surname;
+            CurrentUser = user;
+            CurrentDirector = director;
+        }
+        
         private void DirectorForm_Load(object sender, EventArgs e)
         {
             CenterToParent();
@@ -31,9 +39,9 @@ namespace ElectronicSchoolDiary
 
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
-            Form form = new LoginForm();
-            form.Show();
-            this.Hide();
+                Form form = new LoginForm();
+                form.Show();
+                this.Close();
         }
         private string selectedUser()
         {
@@ -160,10 +168,37 @@ namespace ElectronicSchoolDiary
         private void AddDirectorPasswordButton_Click(object sender, EventArgs e)
         {
             if (OldPassTextBox.Text.Length == 0 ||
-               NewPassTextBox.Text.Length == 0 ||
-               ConfirmedNewPassTextBox.Text.Length == 0)
+                  NewPassTextBox.Text.Length == 0 ||
+                  ConfirmedNewPassTextBox.Text.Length == 0)
             {
                 warning();
+            }
+            else
+            {
+                if (OldPassTextBox.Text == NewPassTextBox.Text)
+                {
+                    MessageBox.Show("Unesite novu lozinku koja se razlikuje od stare !");
+                }
+                else if (OldPassTextBox.Text == CurrentUser.Password && NewPassTextBox.Text == ConfirmedNewPassTextBox.Text)
+                {
+                   bool isChanged =  UsersRepository.ChangePassword(CurrentUser.Id, OldPassTextBox.Text, NewPassTextBox.Text, ConfirmedNewPassTextBox.Text);
+                   if(isChanged == true)
+                    {
+                        ChoseComboBox.SelectedIndex = 0;
+                        AdminPanel.Show();
+                        label2.Show();
+                        ChoseComboBox.Show();
+                        TeacherPanel.Hide();
+                        StudentAndParentPanel.Hide();
+                        DepartmentsPanel.Hide();
+                        PasswordPanel.Hide();
+                        UserSettingsButton.Hide();
+                    }
+                }
+                else if (NewPassTextBox.Text != ConfirmedNewPassTextBox.Text)
+                    MessageBox.Show("Nove lozinke se ne poklapaju !");
+                else MessageBox.Show("Pogrešna lozinka !");
+
             }
         }
     }
