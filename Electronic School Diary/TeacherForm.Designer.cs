@@ -39,10 +39,8 @@
             this.StudentJmbgLabel = new System.Windows.Forms.Label();
             this.StudentAddressLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.StudentsComboBox = new System.Windows.Forms.ComboBox();
             this.StudentPhoneLabel = new System.Windows.Forms.Label();
             this.DepartmentLabel = new System.Windows.Forms.Label();
-            this.CoursesComboBox = new System.Windows.Forms.ComboBox();
             this.TrueFalseAbsentComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -105,6 +103,8 @@
             this.PrintStatisticTeacherRoundedButton = new ElectronicSchoolDiary.RoundedButton();
             this.ControlTableButton = new ElectronicSchoolDiary.RoundedButton();
             this.label44 = new System.Windows.Forms.Label();
+            this.StudentsBox = new System.Windows.Forms.ComboBox();
+            this.CoursesBox = new System.Windows.Forms.ComboBox();
             this.PasswordPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +165,7 @@
             // StudentNameLabel
             // 
             this.StudentNameLabel.AutoSize = true;
-            this.StudentNameLabel.Location = new System.Drawing.Point(170, 127);
+            this.StudentNameLabel.Location = new System.Drawing.Point(126, 127);
             this.StudentNameLabel.Name = "StudentNameLabel";
             this.StudentNameLabel.Size = new System.Drawing.Size(35, 13);
             this.StudentNameLabel.TabIndex = 9;
@@ -174,7 +174,7 @@
             // StudentSurnameLabel
             // 
             this.StudentSurnameLabel.AutoSize = true;
-            this.StudentSurnameLabel.Location = new System.Drawing.Point(170, 172);
+            this.StudentSurnameLabel.Location = new System.Drawing.Point(126, 172);
             this.StudentSurnameLabel.Name = "StudentSurnameLabel";
             this.StudentSurnameLabel.Size = new System.Drawing.Size(35, 13);
             this.StudentSurnameLabel.TabIndex = 8;
@@ -183,7 +183,7 @@
             // StudentJmbgLabel
             // 
             this.StudentJmbgLabel.AutoSize = true;
-            this.StudentJmbgLabel.Location = new System.Drawing.Point(170, 213);
+            this.StudentJmbgLabel.Location = new System.Drawing.Point(126, 213);
             this.StudentJmbgLabel.Name = "StudentJmbgLabel";
             this.StudentJmbgLabel.Size = new System.Drawing.Size(41, 13);
             this.StudentJmbgLabel.TabIndex = 11;
@@ -192,7 +192,7 @@
             // StudentAddressLabel
             // 
             this.StudentAddressLabel.AutoSize = true;
-            this.StudentAddressLabel.Location = new System.Drawing.Point(170, 258);
+            this.StudentAddressLabel.Location = new System.Drawing.Point(126, 258);
             this.StudentAddressLabel.Name = "StudentAddressLabel";
             this.StudentAddressLabel.Size = new System.Drawing.Size(41, 13);
             this.StudentAddressLabel.TabIndex = 10;
@@ -207,20 +207,10 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Izaberite učenika";
             // 
-            // StudentsComboBox
-            // 
-            this.StudentsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StudentsComboBox.FormattingEnabled = true;
-            this.StudentsComboBox.Location = new System.Drawing.Point(116, 82);
-            this.StudentsComboBox.Name = "StudentsComboBox";
-            this.StudentsComboBox.Size = new System.Drawing.Size(165, 21);
-            this.StudentsComboBox.TabIndex = 13;
-            this.StudentsComboBox.SelectedIndexChanged += new System.EventHandler(this.StudentsComboBox_SelectedIndexChanged);
-            // 
             // StudentPhoneLabel
             // 
             this.StudentPhoneLabel.AutoSize = true;
-            this.StudentPhoneLabel.Location = new System.Drawing.Point(170, 303);
+            this.StudentPhoneLabel.Location = new System.Drawing.Point(126, 303);
             this.StudentPhoneLabel.Name = "StudentPhoneLabel";
             this.StudentPhoneLabel.Size = new System.Drawing.Size(41, 13);
             this.StudentPhoneLabel.TabIndex = 15;
@@ -229,20 +219,11 @@
             // DepartmentLabel
             // 
             this.DepartmentLabel.AutoSize = true;
-            this.DepartmentLabel.Location = new System.Drawing.Point(170, 348);
+            this.DepartmentLabel.Location = new System.Drawing.Point(126, 348);
             this.DepartmentLabel.Name = "DepartmentLabel";
             this.DepartmentLabel.Size = new System.Drawing.Size(41, 13);
             this.DepartmentLabel.TabIndex = 14;
             this.DepartmentLabel.Text = "label14";
-            // 
-            // CoursesComboBox
-            // 
-            this.CoursesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CoursesComboBox.FormattingEnabled = true;
-            this.CoursesComboBox.Location = new System.Drawing.Point(585, 79);
-            this.CoursesComboBox.Name = "CoursesComboBox";
-            this.CoursesComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CoursesComboBox.TabIndex = 17;
             // 
             // TrueFalseAbsentComboBox
             // 
@@ -367,7 +348,7 @@
             // ParentPhoneLabel
             // 
             this.ParentPhoneLabel.AutoSize = true;
-            this.ParentPhoneLabel.Location = new System.Drawing.Point(357, 303);
+            this.ParentPhoneLabel.Location = new System.Drawing.Point(315, 303);
             this.ParentPhoneLabel.Name = "ParentPhoneLabel";
             this.ParentPhoneLabel.Size = new System.Drawing.Size(41, 13);
             this.ParentPhoneLabel.TabIndex = 43;
@@ -376,7 +357,7 @@
             // ParentAddressLabel
             // 
             this.ParentAddressLabel.AutoSize = true;
-            this.ParentAddressLabel.Location = new System.Drawing.Point(357, 213);
+            this.ParentAddressLabel.Location = new System.Drawing.Point(315, 213);
             this.ParentAddressLabel.Name = "ParentAddressLabel";
             this.ParentAddressLabel.Size = new System.Drawing.Size(41, 13);
             this.ParentAddressLabel.TabIndex = 41;
@@ -385,7 +366,7 @@
             // ParentEmailLabel
             // 
             this.ParentEmailLabel.AutoSize = true;
-            this.ParentEmailLabel.Location = new System.Drawing.Point(357, 258);
+            this.ParentEmailLabel.Location = new System.Drawing.Point(315, 258);
             this.ParentEmailLabel.Name = "ParentEmailLabel";
             this.ParentEmailLabel.Size = new System.Drawing.Size(41, 13);
             this.ParentEmailLabel.TabIndex = 40;
@@ -394,7 +375,7 @@
             // ParentNameLabel
             // 
             this.ParentNameLabel.AutoSize = true;
-            this.ParentNameLabel.Location = new System.Drawing.Point(357, 127);
+            this.ParentNameLabel.Location = new System.Drawing.Point(315, 127);
             this.ParentNameLabel.Name = "ParentNameLabel";
             this.ParentNameLabel.Size = new System.Drawing.Size(35, 13);
             this.ParentNameLabel.TabIndex = 39;
@@ -403,7 +384,7 @@
             // ParentSurnameLabel
             // 
             this.ParentSurnameLabel.AutoSize = true;
-            this.ParentSurnameLabel.Location = new System.Drawing.Point(357, 172);
+            this.ParentSurnameLabel.Location = new System.Drawing.Point(315, 172);
             this.ParentSurnameLabel.Name = "ParentSurnameLabel";
             this.ParentSurnameLabel.Size = new System.Drawing.Size(35, 13);
             this.ParentSurnameLabel.TabIndex = 38;
@@ -412,7 +393,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(278, 303);
+            this.label21.Location = new System.Drawing.Point(252, 303);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 13);
             this.label21.TabIndex = 48;
@@ -421,7 +402,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(278, 258);
+            this.label22.Location = new System.Drawing.Point(252, 258);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(32, 13);
             this.label22.TabIndex = 47;
@@ -430,7 +411,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(278, 213);
+            this.label23.Location = new System.Drawing.Point(252, 213);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 13);
             this.label23.TabIndex = 46;
@@ -439,7 +420,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(278, 172);
+            this.label24.Location = new System.Drawing.Point(252, 172);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(44, 13);
             this.label24.TabIndex = 45;
@@ -448,7 +429,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(278, 127);
+            this.label25.Location = new System.Drawing.Point(252, 127);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(24, 13);
             this.label25.TabIndex = 44;
@@ -849,12 +830,49 @@
             this.label44.TabIndex = 71;
             this.label44.Text = "Dobro Došli na sistem";
             // 
+            // StudentsBox
+            // 
+            this.StudentsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StudentsBox.FormattingEnabled = true;
+            this.StudentsBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.StudentsBox.Location = new System.Drawing.Point(129, 79);
+            this.StudentsBox.Name = "StudentsBox";
+            this.StudentsBox.Size = new System.Drawing.Size(137, 21);
+            this.StudentsBox.TabIndex = 72;
+            this.StudentsBox.SelectedIndexChanged += new System.EventHandler(this.StudentsBox_SelectedIndexChanged);
+            // 
+            // CoursesBox
+            // 
+            this.CoursesBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CoursesBox.FormattingEnabled = true;
+            this.CoursesBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.CoursesBox.Location = new System.Drawing.Point(586, 79);
+            this.CoursesBox.Name = "CoursesBox";
+            this.CoursesBox.Size = new System.Drawing.Size(114, 21);
+            this.CoursesBox.TabIndex = 73;
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(915, 490);
+            this.Controls.Add(this.CoursesBox);
+            this.Controls.Add(this.StudentsBox);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.ControlTableButton);
             this.Controls.Add(this.PrintStatisticTeacherRoundedButton);
@@ -903,11 +921,9 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TrueFalseAbsentComboBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.CoursesComboBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.StudentPhoneLabel);
             this.Controls.Add(this.DepartmentLabel);
-            this.Controls.Add(this.StudentsComboBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.StudentJmbgLabel);
             this.Controls.Add(this.StudentAddressLabel);
@@ -944,10 +960,8 @@
         private System.Windows.Forms.Label StudentJmbgLabel;
         private System.Windows.Forms.Label StudentAddressLabel;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox StudentsComboBox;
         private System.Windows.Forms.Label StudentPhoneLabel;
         private System.Windows.Forms.Label DepartmentLabel;
-        private System.Windows.Forms.ComboBox CoursesComboBox;
         private System.Windows.Forms.ComboBox TrueFalseAbsentComboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -1010,5 +1024,7 @@
         private RoundedButton CancelMeetingRoundedButton;
         private RoundedButton ControlTableButton;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox StudentsBox;
+        private System.Windows.Forms.ComboBox CoursesBox;
     }
 }

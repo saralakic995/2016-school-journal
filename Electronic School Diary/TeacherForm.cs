@@ -18,7 +18,7 @@ namespace ElectronicSchoolDiary
         private User CurrentUser;
         private Teacher CurrentTeacher;
 
-        public void warning()
+        public void Warning()
         {
             MessageBox.Show("Polja ne mogu biti prazna !");
         }
@@ -29,30 +29,76 @@ namespace ElectronicSchoolDiary
             this.Text = "Nastavnik : " + teacher.Name + " " + teacher.Surname;
             CurrentUser = user;
             CurrentTeacher = teacher;
-        }
 
-      
+          
+        }
         private void TeacherForm_Load(object sender, EventArgs e)
         {
             PasswordPanel.Hide();
             ControlBox = false;
             TrueFalseAbsentComboBox.SelectedIndex = 1;
             AbsentHourComboBox.SelectedIndex = 0;
-            PopulateCoursesComboBox();
             PopulateStudentsComboBox();
+            PopulateCoursesComboBox();
+            FillStudentInfoLabels();
+            FillParentInfoLabels();
         }
         private void PopulateStudentsComboBox()
         {
             string Name = StudentRepository.GetNameQuery();
             string Surname = StudentRepository.GetSurnameQuery();
-            Lists.FillDropDownList2(Name, "Name", Surname, "Surname", StudentsComboBox);
+            Lists.FillDropDownList2(Name, "Name", Surname, "Surname", StudentsBox);
         }
+   
         private void PopulateCoursesComboBox()
         {
             string Title = CoursesRepository.GetQuery();
-            Lists.FillDropDownList1(Title, "Title", CoursesComboBox);
+            Lists.FillDropDownList1(Title, "Title", CoursesBox);
         }
+        private Student CurrentStudent()
+        {
+            Student student;
+            string currentStudentName;
+            string currentStudentSurname;
+         
+                string[] parts = StudentsBox.Text.Split('-');
+                 currentStudentName = parts[0];
+                 currentStudentSurname = parts[1];
 
+           
+                student = StudentRepository.GetStudentByName(currentStudentName, currentStudentSurname);
+            
+            return student;
+        }
+        private Parent CurrentParent()
+        {
+            Parent parent;
+            Student student = CurrentStudent();
+            int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
+            parent = ParentRepository.GetParentByStudentId(studentId);
+            return parent;
+        }
+        private void FillStudentInfoLabels()
+        {
+            Student student = CurrentStudent();
+            int departmentId = StudentRepository.GetDepartmentIdByStudent(student);
+            int departmentTitle = DepartmentsRepository.GetTitleById(departmentId);
+            StudentNameLabel.Text = student.Name;
+            StudentSurnameLabel.Text = student.Surname;
+            StudentJmbgLabel.Text = student.Jmbg.ToString();
+            StudentAddressLabel.Text = student.Address;
+            StudentPhoneLabel.Text = student.Phone_number;
+            DepartmentLabel.Text = departmentTitle.ToString();
+        }
+        private void FillParentInfoLabels()
+        {
+            Parent parent = CurrentParent();
+            ParentNameLabel.Text = parent.Name;
+            ParentSurnameLabel.Text = parent.Surname;
+            ParentAddressLabel.Text = parent.Address;
+            ParentEmailLabel.Text = parent.Email;
+            ParentPhoneLabel.Text = parent.Phone_number;
+        }
         private void LogOutUserButton_Click(object sender, EventArgs e)
         {
                 Form form = new LoginForm();
@@ -96,7 +142,7 @@ namespace ElectronicSchoolDiary
                  NewPassTextBox.Text.Length == 0 ||
                  ConfirmedNewPassTextBox.Text.Length == 0)
             {
-                warning();
+                Warning();
             }
             else
             {
@@ -128,9 +174,10 @@ namespace ElectronicSchoolDiary
             }
         }
 
-        private void StudentsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void StudentsBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            FillStudentInfoLabels();
+            FillParentInfoLabels();
         }
     }
 }

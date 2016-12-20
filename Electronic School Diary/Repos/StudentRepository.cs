@@ -66,22 +66,9 @@ namespace ElectronicSchoolDiary.Repos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               MessageBox.Show(ex.Message);
             }
             return flag;
-        }
-
-        public static int GetIdByNumber(int number)
-        {
-            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Students WHERE Id = @number", Connection);
-            command.Parameters.AddWithValue("@number", number);
-            SqlCeDataReader reader = command.ExecuteReader();
-
-            reader.Read();
-            int result = (int)reader["Id"];
-            reader.Close();
-
-            return result;
         }
 
         public static int GetIdByJmbg(string jmbg)
@@ -95,6 +82,35 @@ namespace ElectronicSchoolDiary.Repos
             reader.Close();
 
             return result;
+        }
+        public static Student GetStudentByName(string name, string surname)
+        {
+            Student student;
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Jmbg,Address,Phone_number FROM Students WHERE name = @name AND surname = @surname", Connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@surname", surname);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+            string jmbg = reader["Jmbg"].ToString();
+            string address = reader["Address"].ToString();
+            string phone = reader["Phone_number"].ToString();
+            student = new Student(name, surname,jmbg, address,phone);
+            reader.Close();
+
+            return student;
+        }
+        public static int GetDepartmentIdByStudent(Student student)
+        {
+            SqlCeCommand command = new SqlCeCommand(@"SELECT DepartmentsId FROM Students WHERE Jmbg = @jmbg", Connection);
+            command.Parameters.AddWithValue("@jmbg", student.Jmbg);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+            int depId = (int)reader["DepartmentsId"];
+            reader.Close();
+            return depId;
+
         }
         public static bool CheckUnique(string jmbg)
         {
