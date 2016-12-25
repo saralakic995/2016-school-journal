@@ -17,13 +17,7 @@ namespace ElectronicSchoolDiary.Repos
         public static string GetNameQuery()
         {
             string query;
-            query = @"SELECT Name FROM Students";
-            return query;
-        }
-        public static string GetSurnameQuery()
-        {
-            string query;
-            query = @"SELECT Surname FROM Students";
+            query = @"SELECT Name,Surname FROM Students";
             return query;
         }
         public static bool AddStudent(string StudentName, string StudentSurname, string Jmbg, string Address, string Phone_number,int departmentsId)

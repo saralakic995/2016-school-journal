@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using ElectronicSchoolDiary.Models;
 using ElectronicSchoolDiary.Repos;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Data.SqlServerCe;
+using System.Diagnostics;
 
 namespace ElectronicSchoolDiary
 {  
@@ -17,6 +22,7 @@ namespace ElectronicSchoolDiary
     {
         private User CurrentUser;
         private Teacher CurrentTeacher;
+        private static SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
         public void Warning()
         {
@@ -29,8 +35,6 @@ namespace ElectronicSchoolDiary
             this.Text = "Nastavnik : " + teacher.Name + " " + teacher.Surname;
             CurrentUser = user;
             CurrentTeacher = teacher;
-
-          
         }
         private void TeacherForm_Load(object sender, EventArgs e)
         {
@@ -38,18 +42,19 @@ namespace ElectronicSchoolDiary
             ControlBox = false;
             TrueFalseAbsentComboBox.SelectedIndex = 1;
             AbsentHourComboBox.SelectedIndex = 0;
+            MarkComboBox.SelectedIndex = 0;
             PopulateStudentsComboBox();
             PopulateCoursesComboBox();
             FillStudentInfoLabels();
             FillParentInfoLabels();
+            FillStudentMarks();
+            FillStudentAbsents();
         }
         private void PopulateStudentsComboBox()
         {
             string Name = StudentRepository.GetNameQuery();
-            string Surname = StudentRepository.GetSurnameQuery();
-            Lists.FillDropDownList2(Name, "Name", Surname, "Surname", StudentsBox);
-        }
-   
+            Lists.FillDropDownList2(Name, "Name", Name, "Surname", StudentsBox);
+        }  
         private void PopulateCoursesComboBox()
         {
             string Title = CoursesRepository.GetQuery();
@@ -77,6 +82,48 @@ namespace ElectronicSchoolDiary
             int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
             parent = ParentRepository.GetParentByStudentId(studentId);
             return parent;
+        }
+        private int GetCurrentMark()
+        {
+            return MarkComboBox.SelectedIndex;
+        }
+        private string GetCurrentCourse()
+        {
+            return CoursesBox.Text;
+        }
+      
+        private void FillStudentMarks()
+        {
+                Student student = CurrentStudent();
+                int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
+                int courseId = CoursesRepository.GetIdByTitle(GetCurrentCourse());
+                string marks = MarksRepository.GetMarks(studentId, courseId);
+                MarksLabel.Text = marks;
+                string[] parts = marks.Split(',');
+                if (parts.Length > 0)
+                {
+                    AverageMarkLabel.Text = CalculateAverageGrade(parts);
+                }
+        }
+        private void FillStudentAbsents()
+        {
+            Student student = CurrentStudent();
+            int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
+            int justifiedAbsents = AbsentsRepository.GetAbsents(studentId, 1);
+            int unjustifiedAbsents = AbsentsRepository.GetAbsents(studentId, 0);
+            JustifiedAbsentLabel.Text = justifiedAbsents.ToString();
+            UnjustifiedAbsentLabel.Text = unjustifiedAbsents.ToString();
+        }
+        public string CalculateAverageGrade(string[] parts)
+        {
+            float sum = 0;
+                for (int i = 0; i < parts.Length - 1 ; i++)
+                {
+                    sum += float.Parse(parts[i]);
+                }
+            float average = sum / (parts.Length -1);
+
+            return average.ToString();
         }
         private void FillStudentInfoLabels()
         {
@@ -128,7 +175,64 @@ namespace ElectronicSchoolDiary
 
         private void PrintStatisticTeacherRoundedButton_Click(object sender, EventArgs e)
         {
-             //TODO Dodati ovde da se pojavi da biramo statistiku po ucenicima, predmetima itd...
+
+            string Query = MarksRepository.GetQuery();
+
+            PdfPTable table = new PdfPTable(2);
+            //actual width of table in points
+            table.TotalWidth = 216f;
+            //fix the absolute width of the table
+            table.LockedWidth = true;
+
+            //relative col widths in proportions - 1/3 and 2/3
+            float[] widths = new float[] { 3f, 3f };
+            table.SetWidths(widths);
+            table.HorizontalAlignment = 0;
+            //leave a gap before and after the table
+            table.SpacingBefore = 20f;
+            table.SpacingAfter = 30f;
+            PdfPCell cell = new PdfPCell(new Phrase("Students"));
+            cell.Colspan = 2;
+            cell.Border = 0;
+            cell.HorizontalAlignment = 1;
+            table.AddCell(cell);
+
+            SqlCeCommand cmd = new SqlCeCommand(Query, Connection);
+            SqlCeDataReader reader = cmd.ExecuteReader();
+
+
+            table.AddCell("Ime i Prezime");
+            table.AddCell("Ocjena");
+            try
+            {
+                while (reader.Read())
+                {
+
+                    table.AddCell(reader["Name"].ToString() + " " + reader["Surname"].ToString());
+                    table.AddCell(reader["Mark"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            LoginForm logf = new LoginForm();
+            string Dir = logf.GetHomeDirectory();
+
+            FileStream fs = new FileStream(Dir + "filename.pdf", FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter pdfWriter = PdfWriter.GetInstance(doc, fs);
+            doc.Open();
+            doc.Add(table);
+
+            pdfWriter.CloseStream = true;
+            doc.Close();
+            Process.Start(Dir + "filename.pdf");
+
+
+
         }
 
         private void ControlTableButton_Click(object sender, EventArgs e)
@@ -168,9 +272,14 @@ namespace ElectronicSchoolDiary
 
         private void AddMarkButton_Click(object sender, EventArgs e)
         {
-            if (MarkTextBox.Text.Length == 0 )
+           int mark = int.Parse(MarkComboBox.SelectedItem.ToString());
+            Student student = CurrentStudent();
+            int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
+            int courseId = CoursesRepository.GetIdByTitle(GetCurrentCourse());
+            bool isMarkAdded = MarksRepository.InsertMark(mark, studentId, courseId);
+            if(isMarkAdded)
             {
-                MessageBox.Show("Polje ne moze biti prazno");
+                FillStudentMarks();
             }
         }
 
@@ -178,6 +287,30 @@ namespace ElectronicSchoolDiary
         {
             FillStudentInfoLabels();
             FillParentInfoLabels();
+            FillStudentMarks();
+            FillStudentAbsents();
+        }
+
+        private void CoursesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillStudentMarks();
+        }
+
+        private void AddAbsentButton_Click(object sender, EventArgs e)
+        {
+            Student student = CurrentStudent();
+            int studentId = StudentRepository.GetIdByJmbg(student.Jmbg);
+            int hours = int.Parse(AbsentHourComboBox.SelectedItem.ToString());
+            bool justified = false;
+            if (TrueFalseAbsentComboBox.Text == "Opravdano")
+            {
+                justified = true;
+            }
+            bool isAbsentAdded = AbsentsRepository.InsertAbsent(hours, justified, studentId);
+            if (isAbsentAdded)
+            {
+                FillStudentAbsents();
+            }
         }
     }
 }
